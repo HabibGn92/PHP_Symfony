@@ -11,7 +11,7 @@
 <body>
     <?php include('header.php') ?>
     <?php include('utils.php') ?>
-    <?php $art = getArticles(3);?>
+    <?php $listArticles = getArticles(3);?>
     <main class=" container content">        
         <?php include('showArticles.php')?>
     </main>
