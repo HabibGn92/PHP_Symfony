@@ -1,0 +1,13 @@
+.content{
+    margin-top: 50px;
+    min-height: 70vh;
+}
+
+.content h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.article{
+    margin-top: 10px !important;
+}
