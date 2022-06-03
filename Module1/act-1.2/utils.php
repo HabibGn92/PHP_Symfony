@@ -54,12 +54,11 @@ function getArticles($n=null){
            $t = $tab;
     }
 
-    if($n < count($tab)){
+    if($n < count($tab) || $n > 0){
           for ($i=0; $i < $n ; $i++) { 
               $t[] = $tab[$i];
           }
       }  
-
       return $t;
       
     }

@@ -11,20 +11,9 @@
 <body>
     <?php include('header.php') ?>
     <?php include('utils.php') ?>
-    
     <?php $art = getArticles();?>
-
     <main class=" container content">
-        <?php foreach($art as $article):?>
-            <div class="card" style="width: 90%;margin: 15px;">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $article['titre']; ?></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"><?php echo $article['auteur']; ?></h6>
-                    <h6 class="card-subtitle mb-2 text-muted"><?php echo $article['date']; ?></h6>
-                    <p class="card-text"><?php echo $article['text']; ?></p>
-                </div>
-            </div>
-        <?php endforeach ?> 
+        <?php include('showArticles.php') ?>
     </main>
     <?php include('footer.php') ?>
 </body>
