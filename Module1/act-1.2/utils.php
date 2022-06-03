@@ -48,7 +48,6 @@ function date_compare($element1, $element2) {
 usort($articles, 'date_compare');
 
 function getArticles($n=null){
-
     global $articles;
 
     foreach($articles as $article){
@@ -57,18 +56,16 @@ function getArticles($n=null){
         }
     }
 
-    if($n === null || $n >= count($tab)){
+    if($n === null || $n >= count($tab) || $n <= 0){
            return $tab;
     }
 
-    if($n < count($tab) || $n > 0){
+    if($n < count($tab)){
           for ($i=0; $i < $n ; $i++) { 
               $t[] = $tab[$i];
           }
           return $t;
       }  
-      
-      
     }
 
     
