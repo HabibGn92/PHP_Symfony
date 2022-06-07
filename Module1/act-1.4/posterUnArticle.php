@@ -30,7 +30,6 @@
             <label for="exampleFormControlInput1" class="form-label">Date de publication</label>
             <input type="date" name="date" class="form-control" id="exampleFormControlInput1">
         </div>
-        <!-- <input type="hidden" name="date" value=<?php echo date("d-m-Y") ?>> -->
         <button type="submit" name="submit" class="btn btn-primary" href="index.php">Publier</button>
     </form>
     </main>
