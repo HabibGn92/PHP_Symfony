@@ -20,6 +20,9 @@
         <h1>Hello ! Ici, c'est la page d'acceuil !</h1>
         <p>Welcome <strong><?php echo $_SESSION['logged_user'] ?></strong> </p>
     </div>
+
+    
+    
    
 
 

@@ -46,6 +46,10 @@ function login($email,$password){
     }else{
         if(password_verify($password, $user[0]['password'])){
             $_SESSION['logged_user'] = $user[0]['email'];
+            if(($_POST['ident'])){
+                setcookie('email', $_POST['email'], time()+3600*24*30);
+                setcookie('password', $_POST['password'], time()+3600*24*30);
+            }
             header('location:index.php');
         }else{
             echo '<div class="alert alert-danger container" role="alert">

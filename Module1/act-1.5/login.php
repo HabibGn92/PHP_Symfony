@@ -21,15 +21,15 @@
 
 <form class="container" action="" method="post">
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <label for="exampleInputEmail1" class="form-label" >Email address</label>
+    <input type="email" name="email" value="<?php echo $_COOKIE['email']?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+    <input type="password" name="password" value="<?php echo $_COOKIE['password']?>" class="form-control" id="exampleInputPassword1">
   </div>
   <div class="form-check">
-    <input type="checkbox" name="ident" class="form-check-input" id="exampleCheck1">
+    <input type="checkbox" name="ident"  class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Retenir mon identifiant</label>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button><br>
@@ -40,12 +40,4 @@
 </body>
 </html>
 
-<!-- <?php
-if(isset($_POST['email']) && isset($_POST['password']) ){
-  if(issset($_POST['ident'])){
-         echo 'coched';
-  }else{
-    echo 'not coched';
-  }
-}
-?> -->
+
