@@ -2,8 +2,8 @@
 
 abstract class Carte {
 
-    private int $coutMana;
-    private int $ptsDegats;
+    protected int $coutMana;
+    protected int $ptsDegats;
 
     function __construct($coutMana,$ptsDegats){
         $this->coutMana = $coutMana;
@@ -11,7 +11,7 @@ abstract class Carte {
     }
 
     public function getPtsDegats(){
-        return $this->getPtsDegats;
+        return $this->ptsDegats;
     }
 
     public function getCoutMana(){

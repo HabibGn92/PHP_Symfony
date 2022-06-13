@@ -10,8 +10,11 @@ class ZoneCombat {
         $this->joueurA = $joueurA;
         $this->joueurB = $joueurB;
     }
+
+    public function __toString(){
+        return $this->joueurA->__toString() . PHP_EOL . $this->joueurB->__toString();
+    }
 }
 
-$habib = new Joueur('habib');
 $zone = new ZoneCombat($kenza,$habib);
-print_r($zone);
+echo $zone->__toString();

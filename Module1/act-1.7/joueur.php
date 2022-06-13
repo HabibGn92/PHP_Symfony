@@ -23,6 +23,15 @@ class Joueur {
             $this->ptsMana = $this->ptsMana - $monstre->getCoutMana();
         }
     }
+
+    public function __toString(){
+        $str='';
+        foreach($this->monstresPlace as $key => $value){
+            $str = $str . 'Monstre n°'. (intval($key) + 1) . ':'.PHP_EOL.'Cout Mana : ' . $value->getCoutMana().PHP_EOL.'Points vie : '.
+            $value->getPtsVie().PHP_EOL.'Points degats : '.$value->getPtsDegats().PHP_EOL;
+        }
+        return 'Joueur : '. $this->pseudo .PHP_EOL. $str;
+    }
 }
 
 $monstre1 = new Monstre(2,8,5);
@@ -32,13 +41,12 @@ $monstre4 = new Monstre(4,6,2);
 $monstre5 = new Monstre(2,8,5);
 $monstre6 = new Monstre(4,6,2);
 $kenza = new Joueur('kenza');
-// print_r($kenza);
-// $kenza->placerMonstre($monstre1);
-// $kenza->placerMonstre($monstre2);
-// $kenza->placerMonstre($monstre3);
-// $kenza->placerMonstre($monstre4);
-// $kenza->placerMonstre($monstre5);
-// $kenza->placerMonstre($monstre6);
-print_r($kenza);
+$habib = new Joueur('habib');
+$kenza->placerMonstre($monstre1);
+$kenza->placerMonstre($monstre2);
+$kenza->placerMonstre($monstre3);
 
-// print_r($kenza->getMonstresPlace());
+$habib->placerMonstre($monstre4);
+$habib->placerMonstre($monstre5);
+$habib->placerMonstre($monstre6);
+

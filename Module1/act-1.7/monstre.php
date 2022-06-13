@@ -1,7 +1,8 @@
 <?php
 include('carte.php');
+include('DamageableInterface.php');
 
-class Monstre extends Carte {
+class Monstre extends Carte implements DamageableInterface{
 
     private int $ptsVie;
 
@@ -15,27 +16,25 @@ class Monstre extends Carte {
         return $this->ptsVie;
     }
 
-    public function minusPtsVie(int $degats){
-        if($degats >= $this->ptsVie){
+    public function takeDamages(int $n){
+        if ($this->ptsVie - $n <= 0) {
             $this->ptsVie = 0;
-        }else{
-            $this->ptsVie = $this->ptsVie - $degats;
+        }else {
+            $this->ptsVie = $this->ptsVie - $n;
         }
         
     }
 
-    public function attaquer(Monstre $monstre){
-        $monstre->minusPtsVie($this->ptsDegats);
+    public function attaquer(DamageableInterface $monstre){
+       $monstre->takeDamages($this->ptsDegats);
     }
 }
 
-include('sort.php');
 
-$monstre1 = new Monstre(2,8,5);
-$sort = new Sort(4,6);
-print_r($monstre1);
-print_r($sort);
-
-// echo $monstre2->getPtsVie().PHP_EOL;
+// $monstre1 = new Monstre(2,8,2);
+// $monstre2 = new Monstre(2,8,5);
+// // print_r($monstre2);
 // $monstre1->attaquer($monstre2);
-// echo $monstre2->getPtsVie();
+
+
+// // print_r($monstre2);
