@@ -80,13 +80,12 @@ $entree = fgets($handle);
 $this->joueurA->piocher();
 
 
+$array = array();
+foreach($this->joueurA->main as $key => $value){
+    $array[]= $value->getCoutMana();
+}
 
-while($this->joueurA->ptsMana>0 && $this->joueurA->ptsMana >= $min){
-    $array = array();
-    foreach($this->joueurA->main as $key => $value){
-        $array[]= $value->getCoutMana();
-    }
-    $min = min($array);
+while($this->joueurA->ptsMana >= min($array) && count($this->joueurA->main) > 0){
 
 echo PHP_EOL.$this;
 
@@ -99,6 +98,11 @@ $handle = fopen ("php://stdin","r");
 $entree = fgets($handle);
 
     $this->joueurA->jouer($this->joueurB, (int)$entree);
+
+    $array = array();
+    foreach($this->joueurA->main as $key => $value){
+        $array[]= $value->getCoutMana();
+    }
 }
 
 $this->joueurA->ptsMana = 10;
@@ -113,14 +117,13 @@ $entree = fgets($handle);
 
 $this->joueurB->piocher();
 
-while($this->joueurB->ptsMana>0  && $this->joueurB->ptsMana >= $min){
-
 $array = array();
 foreach($this->joueurB->main as $key => $value){
     $array[]= $value->getCoutMana();
 }
 
-$min = min($array);
+while($this->joueurB->ptsMana >= min($array) && count($this->joueurB->main) > 0){
+
 
 echo $this;
 $this->joueurB->montrerMain();
@@ -132,6 +135,11 @@ $handle = fopen ("php://stdin","r");
 $entree = fgets($handle);
 
 $this->joueurB->jouer($this->joueurA, (int)$entree);
+
+$array = array();
+foreach($this->joueurB->main as $key => $value){
+    $array[]= $value->getCoutMana();
+}
 }
 
 $this->joueurB->ptsMana = 10;
@@ -167,6 +175,3 @@ else if ($this->joueurA->ptsVie <= 0)
                 }
 }
 }
-
-// $zone = new ZoneCombat($kenza,$habib);
-// echo $zone->__toString();
