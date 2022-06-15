@@ -24,13 +24,14 @@ class Joueur {
     }
 
     public function piocher(){
-            $rand=rand(0,1);
-            if($rand == 0){
-                $this->main[] = new Sort();
-            }
-            else{
-                $this->main[] = new Monstre();
-            }
+            // $rand=rand(0,1);
+            // if($rand == 0){
+            //     $this->main[] = new Sort();
+            // }
+            // else{
+            //     $this->main[] = new Monstre();
+            // }
+            $this->main[] = new Sort();
             
     }
 
