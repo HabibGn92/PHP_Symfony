@@ -28,7 +28,6 @@ nav img{
 }
 
 #home{
-    height: 650px;
     background-image: url('../images/hero-image.jpg');
     background-size:cover;
     text-align: center;
@@ -36,6 +35,7 @@ nav img{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 20px;
 }
 
 #home div{
@@ -72,6 +72,7 @@ nav img{
     justify-content: center;
     align-items: center;
     font-size: 21px;
+    padding: 20px 0 15px;
 }
 #who h2{
     font-size: 40px;
@@ -86,7 +87,7 @@ nav img{
     margin-top: 15px;
 }
 #who p{
-    width: 70%;
+    width: 65%;
     text-align: center;
 }
 
@@ -114,6 +115,7 @@ nav img{
 #get-involved .bloc{
     display: flex;
     justify-content: center;
+    width: 65%;
 }
 .item{
     width: 390px;
@@ -140,12 +142,68 @@ nav img{
 footer{
     background-color: #e74c3c;
     padding-top: 150px;
-    padding-left: 350px;
+    padding-left: 20%;
     padding-bottom: 30px;
 }
 #back-to-top{
     position: absolute;
     width: 50px;
     top: 840px;
-    left: 1500px;
+    left: 95%;
+}
+
+/********************* media Queries **************** */
+@media screen and (max-width: 1199px){
+    #home div{
+        width: 70%;
+    }
+    #who p{
+        width:75%;
+    }
+    #get-involved .bloc{
+        width:75%;
+    }
+    footer{
+        padding-left: 15%;
+    }
+}
+
+@media screen and (max-width: 991px){
+    #home div{
+        width: 80%;
+    }
+    #who p{
+        width:80%;
+    }
+    #get-involved .bloc{
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+        gap: 20px;
+    }
+    .item{
+        width: 80%;
+    }
+    #back-to-top{
+        left: 92%;
+    }
+}
+
+@media screen and (max-width: 767px){
+    #home div{
+        width: 95%;
+    }
+    #who p{
+        width:95%;
+    }
+    .item{
+        width: 95%;
+    }
+    footer{
+        padding-left: 2%;
+    }
+    #back-to-top{
+        left: 90%;
+    }
+
 }
