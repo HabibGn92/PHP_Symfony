@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+	display: flex;
+	font-family: 'Roboto', sans-serif;
+	color:white;
+	background-color: rgb(230, 225, 225);
+}
+
+h1{
+	text-align: center;
+	color:black;
+}
+
+table{
+	border-spacing: 5px;
+}
+
+td{
+	border: 0px solid black;
+	background: inherit;
+	width: 65px;
+	height: 80px;
+	border-radius: 8px 8px;
+}
+
+#input{
+	width: 50px;
+	background-color: inherit;
+	border: inherit;
+}
+.numero{
+	display: block;
+	text-align: center;
+	font-size: 0.75em;
+}
+
+.lettre{
+	display: block;
+	text-align: center;
+	font-weight: bold;
+}
+
+.green{
+	background-color: #0a5f02;
+}
+
+.red{
+	background-color: #b60606; 
+}
+
+.orange{
+	background-color: #f05d09;
+}
+
+.blue{
+	background-color: #072af3;
+}
+
+.blue3{
+	background-color: #27cdd3;
+}
+
+.green2{
+	background-color: #80ca08;
+}
+
+.yellow{
+	background-color: #f1a20f;
+}
+
+.blue2{
+	background-color: #040b47;
+}
+
+.rose{
+	background-color: #E68B95;
+}
+
+.rouge{
+	background-color: #C1618D;
+}
+
+.tabledeux{
+	margin-left: 135px;
+}
+
+#tout{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*media queries*/
+
+@media screen and (max-width: 1500px){
+	.numero{
+		display: block;
+		text-align: center;
+		font-size: 9px;
+		}
+
+		td{
+		border: 0px solid black;
+		background: inherit;
+		width: 45px;
+		height: 49px;
+		}
+
+		.lettre{
+		font-size: 10px;
+		}
+
+		.tabledeux{
+		margin-left: 97px; 
+		}
+
+		.date{
+		font-size: 10px;
+		}
+
+		.place{
+			font-size: 10px;
+		}
+
+		
+
+}
+
+@media screen and (max-width: 1000px){
+	table{
+		border-spacing: 3px;
+		}
+
+	.numero{
+		display: block;
+		text-align: center;
+		font-size: 6px;
+		}
+
+	td{
+		border: 0px solid black;
+		background: inherit;
+		width: 40px;
+		height: 40px;
+	}
+
+	.lettre{
+		font-size: 10px;
+	}
+
+	.tabledeux{
+		margin-left: 87px;
+	 
+	}
+
+}
+
+@media screen and (max-width: 600px){
+	table{
+		border-spacing: 1.5px;
+		}
+
+	.numero{
+		display: block;
+		text-align: center;
+		font-size: 3px;
+		}
+
+	td{
+		border: 0px solid black;
+		background: inherit;
+		width: 20px;
+		height: 22px;
+		border-radius: 4px 4px;
+	}
+
+	.tabledeux{
+		margin-left: 46px;
+	}
+}
