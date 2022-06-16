@@ -1,0 +1,151 @@
+body{
+    margin:0;
+}
+nav{
+    height: 50px;
+    background-color: rgb(56, 56, 56);
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a{
+    text-decoration: none;
+    color: rgb(196, 195, 195);
+    font-family: 'Arvo', serif;
+    font-size: 13px;
+}
+
+nav div{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+
+nav img{
+    width: 18%;
+    height: 35%;
+    align-self: center;
+}
+
+#home{
+    height: 650px;
+    background-image: url('../images/hero-image.jpg');
+    background-size:cover;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home div{
+    width: 60%;
+    margin: auto;
+}
+#home p{
+    font-size: 21px;
+    font-family: "Helvetica Neue",Helvetica,serif;
+}
+#home h1{
+    font-size: 63px;
+    font-family: 'Arvo', serif;
+}
+#home button{
+    background-color: #d9534f;
+    border: none;
+    font-size: 36px;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-family: "Helvetica Neue",Helvetica,serif;
+}
+#home img{
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#who{
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+}
+#who h2{
+    font-size: 40px;
+    color: #e74c3d;
+    font-family: 'Arvo', serif;
+    margin: 0;
+    margin-top: 20px;
+}
+#who hr{
+    width: 160px;
+    border-top: 1px solid #e74c3d;
+    margin-top: 15px;
+}
+#who p{
+    width: 70%;
+    text-align: center;
+}
+
+#get-involved{
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+#get-involved{
+    font-size: 30px;
+}
+#get-involved h2{
+    margin-bottom: 0;
+    color: #e74c3c;
+    font-family: 'Arvo', serif;
+}
+#get-involved hr{
+    width: 160px;
+    border-top: 1px solid #e74c3d;
+    margin-top: 10px;
+}
+#get-involved .bloc{
+    display: flex;
+    justify-content: center;
+}
+.item{
+    width: 390px;
+    padding: 0 15px;
+    text-align: center;
+}
+.item button{
+    color: #e74c3c;
+    background-color: #fff;
+    border-color: #ccc;
+    font-size: 14px;
+    padding: 6px 12px;
+}
+.item p{
+    font-size: 21px;
+    text-align: center;
+}
+.item h3{
+    font-size: 26px;
+    color: #e74c3c;
+    text-align: center;
+    font-family: 'Arvo', serif;
+}
+footer{
+    background-color: #e74c3c;
+    padding-top: 150px;
+    padding-left: 350px;
+    padding-bottom: 30px;
+}
+#back-to-top{
+    position: absolute;
+    width: 50px;
+    top: 840px;
+    left: 1500px;
+}
