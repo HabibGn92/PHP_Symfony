@@ -66,7 +66,7 @@ nav img{
 }
 
 #who{
-    height: 370px;
+    /* height: 370px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -80,6 +80,7 @@ nav img{
     font-family: 'Arvo', serif;
     margin: 0;
     margin-top: 20px;
+    text-align: center;
 }
 #who hr{
     width: 160px;
@@ -166,6 +167,10 @@ footer{
     footer{
         padding-left: 15%;
     }
+    #back-to-top{
+        left: 92%;
+        top: 890px;
+    }
 }
 
 @media screen and (max-width: 991px){
@@ -185,7 +190,8 @@ footer{
         width: 80%;
     }
     #back-to-top{
-        left: 92%;
+        left: 89%;
+        top: 910px;
     }
 }
 
@@ -203,7 +209,8 @@ footer{
         padding-left: 2%;
     }
     #back-to-top{
-        left: 90%;
+        left: 85%;
+        top: 1200px;
     }
 
 }
