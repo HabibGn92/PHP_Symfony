@@ -86,6 +86,7 @@ nav{
     display: flex;
     justify-content: center;
     gap: 40px;
+    background-color: white;
 }
 .filter-item{
     display: flex;
@@ -105,4 +106,12 @@ nav{
     border-radius: 21px;
     border:1px solid rgb(233, 231, 231)  ;
     font-size: 14px;
+}
+.card{
+    margin-bottom: 10px;
+}
+.card-footer a{
+    text-decoration: none;
+    color: rgb(56, 56, 56);
+    text-align: center;
 }
