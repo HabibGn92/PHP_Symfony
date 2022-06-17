@@ -1,0 +1,84 @@
+nav{
+    border-bottom: 1px solid rgb(233, 231, 231);
+    padding: 15px 0px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.search{
+     border: 1px solid rgb(233, 231, 231) ;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 20px 20px;
+     font-size: 14px;
+     padding:0px 5px 0px 12px;
+     box-shadow: 0 1px 1px rgba(0,0,0,0.18);
+}
+.search:hover{
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+.search-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF385C;
+    color: white;
+    width:25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.nav-item3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+#globe-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+#globe-icon:hover{
+    background-color: rgb(226, 224, 224);
+    cursor: pointer;
+}
+
+.connect{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border:1px solid rgb(233, 231, 231) ;
+    padding: 5px 5px 5px 12px;
+    border-radius: 21px;
+}
+
+.connect:hover{
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+    cursor: pointer;
+}
+
+.user-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(141, 141, 141);
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+}
+#hote{
+    padding: 8px;
+    border-radius: 21px;
+}
+#hote:hover{
+    background-color: rgb(233, 231, 231);
+    cursor: pointer;
+}
