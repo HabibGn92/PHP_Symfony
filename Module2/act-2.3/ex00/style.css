@@ -3,6 +3,7 @@ nav{
     padding: 15px 0px;
     display: flex;
     justify-content: space-around;
+    background-color: white;
 }
 
 .search{
@@ -114,4 +115,18 @@ nav{
     text-decoration: none;
     color: rgb(56, 56, 56);
     text-align: center;
+}
+
+footer{
+    padding: 13px 0 12px 100px;
+    background-color: white;
+    border-top: 1px solid rgb(233, 231, 231);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 60px;
+}
+
+footer span:hover{
+    cursor: pointer;
 }
