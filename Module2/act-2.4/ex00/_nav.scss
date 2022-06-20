@@ -1,0 +1,22 @@
+nav{
+    padding: 10px 15px 0px 32px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap:20px;
+
+    img{
+        border-radius: 50%;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .gmail{
+        font-family: $font;
+        font-size: 13px;
+    }
+    .gmail:hover{
+        text-decoration: underline;
+        cursor:pointer;
+    }
+}

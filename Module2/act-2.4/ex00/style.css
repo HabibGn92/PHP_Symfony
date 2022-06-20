@@ -12,12 +12,18 @@ nav {
 nav img {
   border-radius: 50%;
 }
+nav img:hover{
+  cursor: pointer;
+}
 nav .gmail {
   font-family: arial, sans-serif;
   font-size: 13px;
 }
 nav .gmail:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+nav .material-symbols-outlined:hover{
   cursor: pointer;
 }
 
@@ -39,6 +45,8 @@ main .input {
 }
 main .input input {
   border: none;
+  width: 430px;
+  outline: none;
 }
 main .input .goxjub {
   font-size: 14px;
@@ -56,16 +64,23 @@ main .buttons {
   justify-content: center;
   gap: 10px;
 }
+
 main .buttons button {
   background-color: #f8f9fa;
   border: 1px solid #f8f9fa;
   border-radius: 4px;
-  color: #3c4043;
+  color: #646769;
   font-family: arial, sans-serif;
   font-size: 14px;
   padding: 0px 16px;
   height: 36px;
 }
+
+main .buttons button:hover{
+  border: 1px solid #7a7f83 ;
+  cursor: pointer;
+}
+
 main .translation {
   font-size: 13px;
   font-family: arial, sans-serif;
