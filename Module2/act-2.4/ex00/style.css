@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+}
+
+nav {
+  padding: 10px 15px 0px 32px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+nav img {
+  border-radius: 50%;
+}
+nav .gmail {
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+nav .gmail:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 82.6vh;
+}
+main .input {
+  border: 1px solid rgb(209, 207, 207);
+  width: 582px;
+  padding: 10px 8px 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px 20px;
+}
+main .input input {
+  border: none;
+}
+main .input .goxjub {
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  color: #202124;
+  cursor: pointer;
+  line-height: 44px;
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+main .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+main .buttons button {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  font-family: arial, sans-serif;
+  font-size: 14px;
+  padding: 0px 16px;
+  height: 36px;
+}
+main .translation {
+  font-size: 13px;
+  font-family: arial, sans-serif;
+  color: #3c4043;
+}
+main .translation a {
+  text-decoration: none;
+  color: #1a0dab;
+}
+main .translation a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: rgb(238, 236, 236);
+  color: #70757a;
+  font-size: 15px;
+  font-family: arial, sans-serif;
+}
+footer .country {
+  border-bottom: 1px solid #dadce0;
+  padding: 15px 30px;
+}
+footer .footer-items {
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-items div {
+  display: flex;
+  gap: 15px;
+}
+footer .footer-items span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}/*# sourceMappingURL=style.css.map */
