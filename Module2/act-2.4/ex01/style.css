@@ -1,0 +1,192 @@
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  margin-top: 8px;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#grille {
+  width: 20px;
+  height: auto;
+  opacity: 0.9;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+#grille:hover {
+  opacity: 1;
+  border: 1px rgb(141, 134, 134);
+  box-shadow: 1px 2px 2px 1px rgba(117, 46, 46, 0.25);
+}
+
+.firstbloc {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.nav {
+  margin: 10px;
+}
+
+.link {
+  color: #222;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: gill Sans;
+}
+.link:hover {
+  text-decoration: underline;
+  color: #0a0a0a;
+}
+
+.secondbloc {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  margin: auto;
+  height: auto;
+}
+
+.thirdbloc {
+  display: flex;
+  align-self: flex-end;
+  justify-content: space-around;
+  margin: auto;
+  height: auto;
+  margin-left: 12px;
+  font-family: sans-serif;
+}
+.thirdbloc .button1 {
+  background-color: rgb(10, 103, 156);
+  margin-left: 6px;
+  margin-right: 6px;
+  padding-left: 8px;
+  padding-top: 5px;
+  padding-right: 8px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+.thirdbloc .button1:hover {
+  background-color: rgb(3, 63, 97);
+  border: 1px solid lightgray;
+  box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.25);
+}
+.thirdbloc .button2 {
+  background-color: rgb(253, 254, 255);
+  font-size: 13px;
+  color: rgb(77, 73, 73);
+  border-radius: 5px;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.bi-chevron-down {
+  color: #222;
+}
+
+.sticky-bottom {
+  width: 100% !important;
+  border-bottom: 1px solid rgb(184, 184, 184);
+}
+
+.content {
+  width: 600px;
+  margin: auto;
+  margin-top: 30px;
+}
+.content .final-p {
+  font-size: 12px;
+  color: #666666;
+}
+.content .final-p span {
+  text-decoration: underline;
+}
+.content .final-p span:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+.content img {
+  width: 600px;
+}
+.content h5 {
+  margin: 0;
+  font-size: 15px;
+}
+.content h5 span {
+  text-decoration: underline;
+}
+.content h6 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+.content p {
+  font-size: 20px;
+  text-align: justify;
+}
+.content p a {
+  color: #326891;
+}
+.content hr {
+  width: 33%;
+}
+.content .thanks {
+  text-align: center;
+  font-size: 15px;
+  margin: 15px 0px 15px 0px;
+}
+.content .thanks span {
+  font-weight: bolder;
+}
+.content .thanks a {
+  text-decoration: none;
+  color: rgb(50, 104, 145);
+  font-weight: bolder;
+}
+.content .caption {
+  text-align: start;
+  font-size: 15px;
+  color: #727272;
+}
+
+aside {
+  width: 945px;
+  margin: auto;
+}
+aside h1 {
+  font-weight: 700;
+  margin: 0;
+}
+aside .p1 {
+  margin: 0;
+  color: #666666;
+}
+aside div {
+  width: 945px;
+  height: 576px;
+  background-image: url("https://static01.nyt.com/newsgraphics/2014/03/18/theory-of-inflation/1ebaa1b972edda0f407fbaa0e010f6b50fb6792e/inflation-945.png");
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+aside div p {
+  width: 228px;
+  position: relative;
+  top: 135px;
+  font-size: 14px;
+  text-align: left;
+}
+aside img {
+  width: 945px;
+}/*# sourceMappingURL=style.css.map */
