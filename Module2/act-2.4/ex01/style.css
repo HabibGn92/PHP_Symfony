@@ -97,6 +97,79 @@
   border-bottom: 1px solid rgb(184, 184, 184);
 }
 
+.header-para {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.header-para h1 {
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
+  font-size: xx-large !important;
+}
+.header-para h1 hr {
+  width: auto;
+}
+.header-para h2 {
+  font-size: x-large;
+  font-family: "Times New Roman", Times, serif;
+  border-top: 2px solid black;
+  align-items: flex-start;
+}
+.header-para button {
+  border: 1px solid rgb(172, 170, 170);
+  box-sizing: border-box;
+  border-radius: 100px;
+  font-size: small;
+  background-color: white;
+  padding: 0.5rem;
+}
+.header-para figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5rem;
+  margin-left: 5rem;
+  align-content: center;
+  align-items: center;
+}
+.header-para figure img {
+  width: 1300px;
+  margin-top: 2rem;
+}
+.header-para figure span {
+  color: grey;
+  align-self: flex-start;
+}
+.header-para .bi {
+  width: 20px;
+}
+.header-para #centerbutton {
+  margin-bottom: 2rem;
+  background-color: rgb(60, 91, 119);
+  border: 1px solid rgb(39, 58, 77);
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 600px;
+  font-size: small;
+  color: white;
+}
+.header-para p {
+  font-family: arial;
+  width: 600px;
+}
+.header-para ul {
+  width: 600px;
+  font-family: arial;
+}
+.header-para ul li {
+  padding-top: 1rem;
+}
+.header-para ul li a {
+  color: rgb(60, 91, 119);
+}
+
 .content {
   width: 600px;
   margin: auto;
@@ -189,4 +262,49 @@ aside div p {
 }
 aside img {
   width: 945px;
+}
+
+.more-bloc {
+  margin: 30px;
+  padding: 200px;
+}
+.more-bloc .cards-body {
+  display: flex;
+}
+.more-bloc .cards-body .card {
+  border: none;
+  margin: 15px;
+}
+.more-bloc .cards-body .card-title {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: gray;
+}
+.more-bloc .cards-body .p {
+  color: gray;
+}
+.more-bloc .cards-body hr {
+  color: black;
+}
+.more-bloc .cards-body a {
+  font-family: "Times New Roman", Times, serif;
+}
+.more-bloc .cards-body a:link {
+  text-decoration: none;
+  color: black;
+}
+.more-bloc .cards-body a:link:hover {
+  opacity: 0.5;
+}
+.more-bloc .cards-body a.titre :hover {
+  text-decoration: underline;
+}
+.more-bloc .cards-body img {
+  width: 200;
+  height: 150px;
+}
+.more-bloc .cards-body a.a {
+  font-size: 1.1875rem;
+  line-height: 1.4375rem;
 }/*# sourceMappingURL=style.css.map */

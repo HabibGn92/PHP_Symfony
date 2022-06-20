@@ -1,4 +1,92 @@
 @import "header.scss";
+$font-stack:'Times New Roman', Times, serif;
+$font-stack2:arial;
+
+@mixin centeritems(){
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.header-para{
+ 
+ @include centeritems;
+ flex-direction: column;
+   
+  h1{
+       font-style: italic;
+       font-family:$font-stack ;
+       font-size: xx-large !important;
+       hr{width: auto;}
+   }
+   h2{
+ 
+   font-size:x-large;
+   font-family:$font-stack ;
+   border-top: 2px solid black;
+   align-items: flex-start;
+   }
+   button{
+           border:1px solid rgb(172, 170, 170);
+         box-sizing: border-box;
+         border-radius: 100px;
+         font-size: small;
+         background-color: white;
+        padding:0.5rem
+       }
+       figure{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+          margin-right: 5rem;
+          margin-left: 5rem;
+           align-content: center;
+           align-items: center;
+             img{
+           width: 1300px;
+           margin-top:2rem;
+               
+       }
+   span{
+       color: grey;
+       align-self: flex-start;
+   
+   } }
+
+   .bi{
+       width:20px;
+   }
+
+
+   #centerbutton{
+   margin-bottom: 2rem;
+   background-color:rgb(60, 91, 119);
+   border: 1px solid rgb(39, 58, 77);
+   box-sizing: border-box;
+   border-radius: 5px;
+   width: 600px;
+   font-size: small;
+   color:white; 
+}
+p{
+font-family:  $font-stack2;
+width: 600px;
+}
+
+ul{
+   width: 600px;
+ font-family:  $font-stack2;
+li{
+  
+   padding-top: 1rem;
+   a{
+       color:rgb(60, 91, 119);
+   }
+}
+}
+}
+
 .content{
     width: 600px;
     margin: auto;
@@ -93,3 +181,50 @@ aside{
         width: 945px;
     }
 }
+
+.more-bloc{
+    margin: 30px;
+    padding: 200px;
+    .cards-body{
+        display: flex;
+        .card{
+            border: none;
+            margin: 15px;
+        }
+        .card-title {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            color: gray
+        }
+        .p{
+            color: gray 
+        }
+        hr{
+            color:black
+        }
+        a{
+            font-family: 'Times New Roman', Times, serif;
+            &:link { text-decoration: none; 
+            color: black;
+            &:hover{
+                opacity: 0.5;;
+            }}
+        }
+        a.titre{
+            :hover{
+                text-decoration:underline;
+            }
+        }
+        img{
+            width:200;
+            height:150px;
+        }
+        a.a{
+            font-size: 1.1875rem;
+        line-height: 1.4375rem;
+        }
+    }
+
+}
+
