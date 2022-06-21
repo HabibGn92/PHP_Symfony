@@ -307,4 +307,56 @@ aside img {
 .more-bloc .cards-body a.a {
   font-size: 1.1875rem;
   line-height: 1.4375rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-content .footer-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+.footer-content .footer-item a {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 5px;
+}
+.footer-content .footer-item a:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.footer-content .subscribe {
+  padding-left: 5px;
+  border-left: 2px solid rgba(237, 233, 233, 0.913);
+}
+.footer-content h4 {
+  padding-bottom: 10px;
+}
+
+footer {
+  margin-left: 200px;
+  margin-right: 200px;
+  border-top: 2px solid rgba(237, 233, 233, 0.913);
+}
+footer .footer-bot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+  padding-top: 5px;
+  border-top: 2px solid rgba(237, 233, 233, 0.913);
+}
+footer .footer-bot a {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 5px;
+}
+footer .footer-bot a:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
 }/*# sourceMappingURL=style.css.map */
