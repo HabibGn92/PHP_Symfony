@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Ballon</title>
+    <style>
+        div{
+            width: 200px;
+            height:200px;
+            background-color: red;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+  </div>
+
+  <script>
+    let width = 200;
+    let height = 200;
+    let colors = ['red','green','blue'];
+    let counter = 0;
+
+    $(document).ready(function(){
+        $("div").click(function(){
+
+            counter++;
+                if(counter === 3){
+                    counter = 0;
+                }  
+            if (width == 420) {
+                $(this).width(200);
+                $(this).height(200);
+                width = 200;
+                height = 200;
+            }
+            else{
+                $(this).width(width+=10);
+                $(this).height(height+=10);
+            }
+
+                $(this).css('background-color', colors[counter]);
+
+        })
+        
+        $("div").mouseleave(function(){
+            if (width > 200) {
+                $(this).width(width-=5);
+                $(this).height(height-=5);
+                if(counter == 0){
+                    counter = 2;
+                }else{
+                    counter = counter - 1;
+                }
+                $(this).css('background-color', colors[counter]);
+            }
+ 
+        })
+    })
+  </script>
+</body>
+</html>
