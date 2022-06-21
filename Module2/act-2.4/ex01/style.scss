@@ -183,13 +183,20 @@ aside{
 }
 
 .more-bloc{
-    margin: 30px;
-    padding: 200px;
+    margin: 50px 0px 50px 0px;
+    padding: 0px 200px 0px 200px;
     .cards-body{
         display: flex;
+        .cards{
+            width: 80%;
+        }
+        .card-group{
+            display: flex;
+        }
         .card{
             border: none;
             margin: 15px;
+            width:30%;
         }
         .card-title {
             display: flex;

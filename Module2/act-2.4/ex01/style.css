@@ -265,15 +265,22 @@ aside img {
 }
 
 .more-bloc {
-  margin: 30px;
-  padding: 200px;
+  margin: 50px 0px 50px 0px;
+  padding: 0px 200px 0px 200px;
 }
 .more-bloc .cards-body {
+  display: flex;
+}
+.more-bloc .cards-body .cards {
+  width: 80%;
+}
+.more-bloc .cards-body .card-group {
   display: flex;
 }
 .more-bloc .cards-body .card {
   border: none;
   margin: 15px;
+  width: 30%;
 }
 .more-bloc .cards-body .card-title {
   display: flex;
