@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Galerie</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        img{
+            width:200px;
+            height:200px;
+            margin-bottom: 15px;
+        }
+        .content{
+            padding-top: 50px;
+            width: 60%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap:5px;
+            
+        }
+        .modal{
+            height: 100vh;
+            background-color: black;
+            margin-top: -61.5vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+    <img src="https://img-fotki.yandex.ru/get/6209/127863950.77/0_8727e_42848a0_orig.jpg" alt="img1">
+    <img src="https://img-fotki.yandex.ru/get/6109/127863950.76/0_87272_284fe3e4_orig.jpg" alt="img2">
+    <img src=https://th.bing.com/th/id/OIP.yFoEH1mQYqMHbvoikfEOdQHaFj?pid=ImgDet&rs=1 alt="img3">
+    <img src="https://1.bp.blogspot.com/-hQoBKQI7tfY/UIQmXe2Zj_I/AAAAAAAAAVw/mCTqZp50XBk/s1600/232073.jpg" alt="img4">
+    <img src="https://th.bing.com/th/id/R.b916e9b05dae46c92aa11330e9a9aa13?rik=7WeMwOCFq6yh4Q&riu=http%3a%2f%2f4.bp.blogspot.com%2f-PJrxcESEbvo%2fVJ2sU7jmG4I%2fAAAAAAAAE5w%2fAzebSxngbYU%2fs1600%2fkonavillage.jpg&ehk=%2f2rpd8LBXMvDN3QPZOs5p9FxTtol8U2xGxOYgk1uB0M%3d&risl=&pid=ImgRaw&r=0" alt="img5">
+    <img src="https://www.alojapan.com/wp-content/uploads/2018/09/12144234_996918470380375_2117418134_n.jpg" alt="img6">
+    <img src="https://4.bp.blogspot.com/-d_nTsaXhy9M/UJA0owaOdhI/AAAAAAAAD5g/Dp5IbfkIj1w/s1600/wallpaper21.jpg" alt="img7">
+    <img src="https://d37c6ksue6vtl3.cloudfront.net/contents/photo_gallery/640_480/3616_4.jpg" alt="img8">
+    </div>
+    <div class="modal">
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".modal").hide();
+            $("img").click(function(){
+                $(".modal").show();
+                $("img").css("z-index","-1");
+                $(this).css({"z-index":"1","position":"absolute","width":"initial","height":"initial"});
+            })
+            $(".modal").click(function(){
+                $(this).hide();
+                $("img").css({"z-index":"0","position":"initial","width":"200px","height":"200px"});
+            })
+        })
+    </script>
+</body>
+</html>
