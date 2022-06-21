@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #text{
+            width:30%;
+            font-size: 30px;
+            margin: auto;
+            text-align: center;
+            margin-top: 100px;
+            border:1px solid black;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body> 
+    <div id="text">
+        
+    </div>
+    <script>
+        let date = new Date();
+        let hours = date.getHours();
+        setInterval(()=>{
+            document.body.style.backgroundColor = 'black';
+        },5000);
+
+        if( hours > 5 && hours < 20){
+            document.getElementById("text").innerHTML="jour";
+            document.getElementById("text").style.backgroundColor = "white";
+        }
+        else{
+            document.getElementById("text").innerHTML="nuit";
+            document.getElementById("text").style.color = "white";
+            document.getElementById("text").style.backgroundColor = "black";
+        }
+    </script>
+</body>
+</html>
