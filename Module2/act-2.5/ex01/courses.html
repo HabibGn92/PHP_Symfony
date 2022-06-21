@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:20px 0px 0px 100px;
+        }
+    </style>
+</head>
+<body>
+        <h2>Ajouter une course :</h2>
+        <input type="text" id="ideas">
+        <input type="submit" value="submit" id="submit">
+        <div id="resultat">
+            <ul></ul>
+        </div>
+    <script>
+        let resultat = document.getElementById("resultat");
+        let submit = document.getElementById("submit");
+        let input = document.getElementById("ideas");
+
+        submit.addEventListener('click',()=>{
+            if(input.value != ""){
+                resultat.innerHTML += "<li>" + input.value + "</li>";
+                input.value="";
+            }
+        })
+    </script>
+</body>
+</html>
