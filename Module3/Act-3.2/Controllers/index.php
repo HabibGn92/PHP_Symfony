@@ -1,8 +1,33 @@
 <?php
 include_once('../Models/Article.php');
+include_once('../Models/Commentaires.php');
+include_once('../utils.php');
 
+$commentaires = new Commentaires();
 $myArticles = new Article();
 $listArticles = $myArticles->getArticles();
+usort($listArticles, 'date_compare');
+$listArticles = triArticles(3);
+
+
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+    $myArticles->deleteArticle($id);
+    header("Location:index.php");
+}
+
+if ( isset($_POST['addArticle'])) {
+    $myArticles->addArticle($_POST['titre'],$_POST['text'],$_POST['auteur'],$_POST['date']);
+    header("Location:index.php");
+}
+
+if ( isset($_POST['addComment'])) {
+    echo 'addComment';
+    echo $_POST['comment'];
+    $commentaires->addComment($_POST['comment'],$_POST['auteur'],$_POST['date'],$_POST['article_id']);
+    header("Location:index.php");
+}
+
 
 if (isset($_GET['url'])) {
     if($_GET['url'] == 'posterArticle'){
@@ -12,17 +37,11 @@ if (isset($_GET['url'])) {
         include_once('../Views/article.php');
     }
 }else{
-    include_once('../Views/article.php');
+        include_once('../Views/article.php');
 }
 
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']);
-    $myArticles->deleteArticle($id);
-}
 
-if ( isset($_POST['addArticle'])) {
-    $myArticles->addArticle($_POST['titre'],$_POST['text'],$_POST['auteur'],$_POST['date']);
-}
+
 
 
 

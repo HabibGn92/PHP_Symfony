@@ -1,8 +1,4 @@
-<?php include('connectDB.php') ?>
-<?php
-$articlesStatement = $db->prepare('SELECT * FROM articles');
-$articlesStatement->execute();
-$articles = $articlesStatement->fetchAll();
+<?php 
 
 // tri des articles
 function date_compare($element1, $element2) {
@@ -10,13 +6,12 @@ $datetime1 = strtotime($element1['date_publication']);
 $datetime2 = strtotime($element2['date_publication']);
 return $datetime2 - $datetime1;
 } 
-usort($articles, 'date_compare');
 
 // fonction getArticles
-function getArticles($n=null){
-    global $articles;
+function triArticles($n=null){
+    global $listArticles;
 
-    foreach($articles as $article){
+    foreach($listArticles as $article){
         if(strtotime($article['date_publication']) < time()){
             $tab[] = $article;
         }
@@ -33,19 +28,6 @@ function getArticles($n=null){
           return $t;
       }  
     }
-
-function getComments($id){
-    global $db;
-    $commentsStatement = $db->prepare('SELECT * FROM commentaires WHERE article_id = :id');
-    $commentsStatement->execute([
-        'id'=>$id
-    ]);
-    $comments = $commentsStatement->fetchAll();
-
-    return $comments;
-}
-
-
 
 
 ?>

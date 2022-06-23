@@ -11,9 +11,6 @@
           <a class="nav-link active" aria-current="page" href="index.php?url=home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="articles.php">Articles</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="index.php?url=posterArticle">Poster un article</a>
         </li>
       </ul>

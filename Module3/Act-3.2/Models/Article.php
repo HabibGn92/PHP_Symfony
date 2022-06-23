@@ -5,16 +5,15 @@ class Article {
     private $db;
 
     public function __construct(){
-        $this->db = $this->getDb();
 
-        $articlesStatement = $this->db->prepare('SELECT * FROM articles');
-        $articlesStatement->execute();
-        $articles = $articlesStatement->fetchAll();
-        $this->article = $articles;
+        $this->db = $this->getDb();
+        $this->article = $this->getArticles();
     }
 
     public function getArticles(){
-        return $this->article;
+        $articlesStatement = $this->db->prepare('SELECT * FROM articles');
+        $articlesStatement->execute();
+        return $articles = $articlesStatement->fetchAll();
     }
 
     public function deleteArticle($id){
@@ -35,7 +34,7 @@ class Article {
             'date_publication' => $date_publication, 
         ]);
     }
-
+    
     public function getDb(){
         try
         {
