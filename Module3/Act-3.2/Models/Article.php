@@ -3,6 +3,7 @@
 class Article {
     private $article;
     private $db;
+    private static $database;
 
     public function __construct(){
 
@@ -46,6 +47,23 @@ class Article {
         }   
         return $db;
     }
+
+    public static function connectDB(){
+        if (is_null(self::$db)) {
+            try
+            {
+                self::$db = new PDO('mysql:host=localhost;dbname=database;charset=utf8', 'root', '');
+            }
+            catch (Exception $e)
+            { 
+                die('Erreur : ' . $e->getMessage());
+            }
+        }
+        return self::$db;
+    }
+    
+    
+
 
 
 
