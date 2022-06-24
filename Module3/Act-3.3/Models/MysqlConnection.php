@@ -12,7 +12,7 @@ class MysqlConnection {
         if (is_null(self::$db)) {
             try
             {
-                $connect = new PDO('mysql:host=localhost;dbname=database;charset=utf8', 'root', '');
+                $connect = new PDO('mysql:host=localhost;dbname=databasehk;charset=utf8', 'root', '');
             }
             catch (Exception $e)
             { 

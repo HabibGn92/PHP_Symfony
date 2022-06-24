@@ -6,13 +6,13 @@ class Carte extends MysqlConnection {
 
     public function getCarte(){
 
-        // $n = rand(1,10);
+        $n = rand(1,10);
 
-        $carteStatement = self::$db->prepare('SELECT * FROM articles');
+        $carteStatement = self::$db->prepare('SELECT * FROM carte WHERE id=:id');
 
         $carteStatement->execute();
 
-        return  $carteStatement->fetchAll();
+        return  $carteStatement->fetch();
 
     }
 

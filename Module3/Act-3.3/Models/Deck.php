@@ -7,7 +7,7 @@ class Deck {
 
     public function __construct(){
         $carte = new Carte();
-        for ($i=0; $i < 30; $i++) { 
+        for ($i=0; $i < 5; $i++) { 
             $tab[] = $carte->getCarte();
         }
         $this->deck = $tab;
