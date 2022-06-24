@@ -5,7 +5,7 @@ include_once('../utils.php');
 
 $commentaires = new Commentaires();
 $myArticles = new Article();
-$listArticles = $myArticles->getArticles();
+$listArticles = $myArticles->getArticles(3);
 usort($listArticles, 'date_compare');
 $listArticles = triArticles(3);
 
