@@ -1,0 +1,7 @@
+table carte
+id 
+type_carte
+cout_mana 
+nb_pts_dommage
+nb_pts_vie
+image
