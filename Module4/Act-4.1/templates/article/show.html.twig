@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Mon Blog - Articles
+{% endblock %}
+
+{% block body %}
+  {% if id == 1 %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          PHP
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Habib Hajjem
+        </h6>
+        <p class="card-text">
+          Culpa irure mollit cupidatat aute. Consequat sint occaecat sunt do
+          sint Lorem tempor laborum duis laborum. Id mollit consequat anim
+          adipisicing. Consequat excepteur sit aliqua enim. Lorem sit magna
+          minim incididunt tempor ad irure. Irure aliquip magna nostrud id do
+          enim.Irure proident exercitation ut sint ut excepteur proident est
+          velit exercitation sunt. Mollit mollit fugiat nulla est eu mollit
+          tempor qui minim ullamco velit sunt elit cupidatat. Ad anim nostrud
+          nulla anim minim deserunt id dolore velit mollit. Nisi dolore magna
+          veniam pariatur. Ipsum tempor minim eu do. Consequat esse esse commodo
+          ea anim consequat.
+        </p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  {% elseif id == 2 %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          Symfony
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Bukayo Saka
+        </h6>
+        <p class="card-text">
+          Culpa irure mollit cupidatat aute. Consequat sint occaecat sunt do
+          sint Lorem tempor laborum duis laborum. Id mollit consequat anim
+          adipisicing. Consequat excepteur sit aliqua enim. Lorem sit magna
+          minim incididunt tempor ad irure. Irure aliquip magna nostrud id do
+          enim.Irure proident exercitation ut sint ut excepteur proident est
+          velit exercitation sunt. Mollit mollit fugiat nulla est eu mollit
+          tempor qui minim ullamco velit sunt elit cupidatat. Ad anim nostrud
+          nulla anim minim deserunt id dolore velit mollit. Nisi dolore magna
+          veniam pariatur. Ipsum tempor minim eu do. Consequat esse esse commodo
+          ea anim consequat.
+        </p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  {% elseif (id == 3) %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">
+          Angular
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Gabriel Jesus
+        </h6>
+        <p class="card-text">
+          Culpa irure mollit cupidatat aute. Consequat sint occaecat sunt do
+          sint Lorem tempor laborum duis laborum. Id mollit consequat anim
+          adipisicing. Consequat excepteur sit aliqua enim. Lorem sit magna
+          minim incididunt tempor ad irure. Irure aliquip magna nostrud id do
+          enim.Irure proident exercitation ut sint ut excepteur proident est
+          velit exercitation sunt. Mollit mollit fugiat nulla est eu mollit
+          tempor qui minim ullamco velit sunt elit cupidatat. Ad anim nostrud
+          nulla anim minim deserunt id dolore velit mollit. Nisi dolore magna
+          veniam pariatur. Ipsum tempor minim eu do. Consequat esse esse commodo
+          ea anim consequat.
+        </p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+    {% else %}
+    <h1>Article introuvable</h1>
+  {% endif %}
+{% endblock %}
