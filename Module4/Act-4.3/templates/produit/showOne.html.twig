@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProduitController!{% endblock %}
+
+
+
+{% block body %}
+<style>
+.content{
+    display:flex;
+    }
+.product_container{
+    width:60%;
+    text-align:center;
+}
+.adjacent_container{
+    border:solid 1px black;
+    width:25%;
+    text-align:center;
+}
+</style>
+
+<div class="content" >
+<div class="product_container">
+<h1>Product name : {{product.name}}</h1>
+<h1>Description : {{product.description}}</h1>
+<h1>Price : {{product.price}}</h1>
+<h1>Category : {{category.name}}</h1>
+</div>
+
+
+<div class="adjacent_container">
+{% for key,product in products %}
+{% if key < 5 %}
+<h1>Product N° : {{key + 1}}</h1>
+<h1>Name :{{product.name}}</h1>
+<h1>Description:{{product.description}}</h1>
+<h1>Price :{{product.price}}</h1>
+{% endif %}
+{% endfor %}
+</div>
+
+
+
+</div>
+{% endblock %}
