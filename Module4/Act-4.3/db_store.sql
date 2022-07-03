@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 01 juil. 2022 à 16:15
+-- Généré le : dim. 03 juil. 2022 à 14:09
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 7.4.29
 
@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `categorie`
 --
 
+DROP TABLE IF EXISTS `categorie`;
 CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -47,6 +48,7 @@ INSERT INTO `categorie` (`id`, `name`) VALUES
 -- Structure de la table `doctrine_migration_versions`
 --
 
+DROP TABLE IF EXISTS `doctrine_migration_versions`;
 CREATE TABLE `doctrine_migration_versions` (
   `version` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
   `executed_at` datetime DEFAULT NULL,
@@ -70,6 +72,7 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 -- Structure de la table `message`
 --
 
+DROP TABLE IF EXISTS `message`;
 CREATE TABLE `message` (
   `id` int(11) NOT NULL,
   `content` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -90,6 +93,7 @@ INSERT INTO `message` (`id`, `content`) VALUES
 -- Structure de la table `produit`
 --
 
+DROP TABLE IF EXISTS `produit`;
 CREATE TABLE `produit` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -116,6 +120,7 @@ INSERT INTO `produit` (`id`, `name`, `description`, `price`, `category_id`) VALU
 -- Structure de la table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -135,10 +140,21 @@ INSERT INTO `user` (`id`, `name`) VALUES
 -- Structure de la table `user_message`
 --
 
+DROP TABLE IF EXISTS `user_message`;
 CREATE TABLE `user_message` (
   `user_id` int(11) NOT NULL,
   `message_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user_message`
+--
+
+INSERT INTO `user_message` (`user_id`, `message_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(2, 1);
 
 --
 -- Index pour les tables déchargées
