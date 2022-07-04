@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Services\FileSystemImproved;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Path;
@@ -62,5 +63,16 @@ class FileController extends AbstractController
             $filesystem->remove(dirname(getcwd()) . "\\vendor\symfony\http-client-contracts\Test\Fixtures\web\\".$file_name.".txt");
         }
         return $this->render('file/delete.html.twig');
+    }
+
+    /**
+     * @Route("/create_file/{file_name}", name="create_file_fsi")
+     */
+    public function createFileFsi(FileSystemImproved $fileSystemImproved,$file_name): Response
+    {
+        $tab = $fileSystemImproved->createFile($file_name);
+        return $this->render('file/createFsi.html.twig',[
+            "tab" => $tab
+        ]);
     }
 }
