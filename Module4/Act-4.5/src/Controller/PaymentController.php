@@ -2,33 +2,29 @@
 
 namespace App\Controller;
 
-use App\Classe\Papier;
 use App\Classe\Payment;
-use App\Form\PapierType;
 use App\Form\PaymentType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class PapierController extends AbstractController
+class PaymentController extends AbstractController
 {
     /**
-     * @Route("/papier", name="app_papier")
+     * @Route("/payment", name="app_payment")
      */
     public function index(Request $request): Response
     {
-        $papier = new Papier();
-        $form = $this->createForm(PapierType::class,$papier);
+        $payment = new Payment();
+        $form = $this->createForm(PaymentType::class,$payment);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $form = $form->getData();
-            return $this->redirectToRoute('app_payment');
+            return $this->render('papier/succes.html.twig');
         }
-        return $this->render('papier/index.html.twig', [
+        return $this->render('payment/index.html.twig', [
             'form' => $form->createView(),
         ]);
     }
-
-    
 }
