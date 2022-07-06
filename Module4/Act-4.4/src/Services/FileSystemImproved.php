@@ -73,7 +73,7 @@ class FileSystemImproved {
         foreach ($files as $file) {
             $path = $file->getRealPath();
         }
-        $file = fopen($path,'r+');
+        $file = fopen($path,'a+');
         fseek($file,$offset);
         fwrite($file,$text);
         fclose($file);
