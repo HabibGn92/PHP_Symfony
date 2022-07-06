@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Path;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -65,14 +66,54 @@ class FileController extends AbstractController
         return $this->render('file/delete.html.twig');
     }
 
+
+
+
+
     /**
      * @Route("/create_file/{file_name}", name="create_file_fsi")
      */
     public function createFileFsi(FileSystemImproved $fileSystemImproved,$file_name): Response
     {
-        $tab = $fileSystemImproved->createFile($file_name);
-        return $this->render('file/createFsi.html.twig',[
-            "tab" => $tab
-        ]);
+        $res = $fileSystemImproved->createFile($file_name);
+        return new JsonResponse($res);
+
     }
+
+    /**
+     * @Route("/delete_file/{file_name}", name="delete_file_fsi")
+     */
+    public function deleteFileFsi(FileSystemImproved $fileSystemImproved,$file_name): Response
+    {
+        $res = $fileSystemImproved->deleteFile($file_name);
+        return new JsonResponse($res);
+    }
+
+    /**
+     * @Route("/write_in_file/{file_name}/{content}/{offset?}", name="write_file_fsi")
+     */
+    public function writeFsi(FileSystemImproved $fileSystemImproved,$file_name,$content,$offset): Response
+    {
+        $res = $fileSystemImproved->writeInFile($file_name,$content,$offset);
+        return new JsonResponse($res);
+    }
+
+    /**
+     * @Route("/read_file/{file_name}", name="read_file_fsi")
+     */
+    public function readFsi(FileSystemImproved $fileSystemImproved,$file_name): Response
+    {
+        $res = $fileSystemImproved->readFile($file_name);
+        return new JsonResponse($res);
+    }
+
+    /**
+     * @Route("/state", name="state")
+     */
+    public function state(FileSystemImproved $fileSystemImproved): Response
+    {
+        $res = $fileSystemImproved->state();
+        return new JsonResponse($res);
+    }
+
 }
