@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+		<form method="post" action="{{path('login')}}">
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Email address</label>
+				<input type="email" class="form-control" name="_username">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Password</label>
+				<input type="password" class="form-control" name="_password" >
+			</div>
+            <button class="btn btn-primary"> se connecter </button>
+		</form>
+	</div>
+{% endblock %}
