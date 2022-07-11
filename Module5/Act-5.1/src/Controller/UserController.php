@@ -47,7 +47,7 @@ class UserController extends AbstractController
             $user->setProfession($profession);
             $em->persist($user);
             $em->flush();
-            return $this->render('user/login.html.twig');
+            return $this->redirectToRoute('login');
         }
         return $this->render('user/register.html.twig', [
             'form' => $form->createView(),

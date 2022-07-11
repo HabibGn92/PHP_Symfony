@@ -6,6 +6,7 @@ use App\Entity\Profession;
 use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\ProfessionRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -100,6 +101,21 @@ class UserController extends AbstractController
        return  $this->json([
         'user' => $user->getUsername(),
         'email' => $user->getEmail()
+       ]);
+    }
+
+    /**
+     * @Route("/getUsers", name="get_users")
+     */
+    public function getUsers(UserRepository $userRepo)
+    {
+       $res = array();
+       $users = $userRepo->findAll();
+       foreach ($users as $user) {
+        $res[$user->getUsername()] = $user->getEmail();
+       }
+       return  $this->json([
+        'users' => $res
        ]);
     }
 
