@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<h1>This is the home page </h1>
+		{% if is_granted('ROLE_USER') %}
+		    {% if is_granted('ROLE_ADMIN') %}
+                <h1> My name is {{ app.user.username}}. 
+                I have admin roles </h1>
+            {% else %}
+                <h1> My name is {{ app.user.username}}. 
+                I have just user role </h1>
+            {% endif %}
+		{% endif %}
+</div>
+{% endblock %}

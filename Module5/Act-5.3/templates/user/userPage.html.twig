@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+<style>
+		.info{
+			margin-top:25px;
+			font-size:24px;
+		}
+</style>
+
+	<div class="container">
+		<h1> User Page </h1>
+		<a class="btn btn-primary" onclick="myFunction()"> show user info </a>
+		<div class="info">
+		<span id="username"></span><br/>
+		<span id="email"></span>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+	
+	function myFunction(){
+
+		axios.get("/getCurrent").then(function(response){
+			document.getElementById('username').textContent = "User name : " + response.data.user;
+			document.getElementById('email').textContent = "Adresse email : " + response.data.email;
+		})
+	}
+
+</script>
+
+{% endblock %}
