@@ -6,14 +6,15 @@
 
 <div class="container">
 <h1>This is the home page </h1>
-		{% if is_granted('ROLE_USER') %}
-		    {% if is_granted('ROLE_ADMIN') %}
+		{% if is_granted('ROLE_USER') and is_granted('ROLE_ADMIN') %}
                 <h1> My name is {{ app.user.username}}. 
-                I have admin roles </h1>
-            {% else %}
+                I have admin and user roles </h1>
+            {% elseif is_granted('ROLE_ADMIN') %}
                 <h1> My name is {{ app.user.username}}. 
-                I have just user role </h1>
-            {% endif %}
+                I have admin role </h1>
+            {% elseif is_granted('ROLE_USER') %}
+                <h1> My name is {{ app.user.username}}. 
+                I have user role </h1>
 		{% endif %}
 </div>
 {% endblock %}
