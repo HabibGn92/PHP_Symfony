@@ -16,8 +16,6 @@ class FileSystemImproved {
         $this->fs = new Filesystem();
         $this->finder  = new Finder();
         
-
-
         if (!$this->fs->exists('C:\Users\hhajjem\Desktop\PHP_Symfony\Module5\Act-5.4\vendor\symfony\http-client-contracts\Test\Fixtures\web\\fsi')) {
             $this->fs->mkdir('C:\Users\hhajjem\Desktop\PHP_Symfony\Module5\Act-5.4\vendor\symfony\http-client-contracts\Test\Fixtures\web\\fsi');
         }
@@ -38,13 +36,13 @@ class FileSystemImproved {
 
     public function createFile($filename){
 
-        $this->fs->touch("C:\Users\hhajjem\Desktop\PHP_Symfony\Module5\Act-5.4\\vendor\symfony\http-client-contracts\Test\Fixtures\web\\fsi\\".$filename.".txt");
+        $this->fs->touch("C:\Users\hhajjem\Desktop\PHP_Symfony\Module5\Act-5.4\\vendor\symfony\http-client-contracts\Test\Fixtures\web\\fsi\\".$filename);
         return $this->state();
     }
 
     public function deleteFile($filename)
     {
-        $files = $this->finder->in(dirname(getcwd()))->path($filename.'.txt');
+        $files = $this->finder->in(dirname(getcwd()))->path($filename);
         if (!$files->hasResults()) {
             return false;
         }
@@ -59,7 +57,7 @@ class FileSystemImproved {
 
     public function writeInFile($filename, $text, $offset = 0)
     {
-        $files = $this->finder->in(dirname(getcwd()))->path($filename.'.txt');
+        $files = $this->finder->in(dirname(getcwd()))->path($filename);
         if (!$files->hasResults()) {
             return false;
         }
@@ -74,7 +72,7 @@ class FileSystemImproved {
     }
 
     public function readFile($filename){
-        $files = $this->finder->in(dirname(getcwd()))->path($filename.'.txt');
+        $files = $this->finder->in(dirname(getcwd()))->path($filename);
         if (!$files->hasResults()) {
             return false;
         }
