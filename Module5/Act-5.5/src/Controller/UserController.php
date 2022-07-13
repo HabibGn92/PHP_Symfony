@@ -48,7 +48,6 @@ class UserController extends AbstractController
             $profession = $professionRepository->findOneBy([
                 'name' => $form->get('profession')->getData()
             ]);
-            $user->setProfession($profession);
             $em->persist($user);
             $em->flush();
             return $this->redirectToRoute('login');
@@ -86,40 +85,40 @@ class UserController extends AbstractController
         return $this->render('user/userPage.html.twig');
     }
 
-    /**
-     * @Route("/admin", name="admin_page")
-     */
-    public function adminPage(DataTableFactory $dataTableFactory,Request $request,UserRepository $userRepo): Response
-    {
-        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+    // /**
+    //  * @Route("/admin", name="admin_page")
+    //  */
+    // public function adminPage(DataTableFactory $dataTableFactory,Request $request,UserRepository $userRepo): Response
+    // {
+    //     $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
-        $users = $userRepo->findAll();
-        foreach ($users as $user) {
-            $tab[] = [
-                'userName' => $user->getUserName(),
-                'email' => $user->getEmail()
-            ];
-        }
-        $table = $dataTableFactory->create()
-        ->add('userName', TextColumn::class,[
-            'label' => 'user name',
-            'searchable' => true
-        ])
-        ->add('email', TextColumn::class, [
-            'label' => 'email'
-        ])
-        ->createAdapter(ArrayAdapter::class,$tab)
-        ->handleRequest($request);
+    //     $users = $userRepo->findAll();
+    //     foreach ($users as $user) {
+    //         $tab[] = [
+    //             'userName' => $user->getUserName(),
+    //             'email' => $user->getEmail()
+    //         ];
+    //     }
+    //     $table = $dataTableFactory->create()
+    //     ->add('userName', TextColumn::class,[
+    //         'label' => 'user name',
+    //         'searchable' => true
+    //     ])
+    //     ->add('email', TextColumn::class, [
+    //         'label' => 'email'
+    //     ])
+    //     ->createAdapter(ArrayAdapter::class,$tab)
+    //     ->handleRequest($request);
 
-        if ($table->isCallback()) {
-            return $table->getResponse();
-        }
+    //     if ($table->isCallback()) {
+    //         return $table->getResponse();
+    //     }
 
-        return $this->render('user/adminPage.html.twig',[
-            'dataTable' => $table,
-            'users' => $tab
-        ]);
-    }
+    //     return $this->render('user/adminPage.html.twig',[
+    //         'dataTable' => $table,
+    //         'users' => $tab
+    //     ]);
+    // }
 
 
 }

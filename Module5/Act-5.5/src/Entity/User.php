@@ -41,11 +41,6 @@ class User implements UserInterface
      */
     private $roles = [];
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Profession::class, inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $profession;
 
 
     public function getId(): ?int
@@ -121,12 +116,7 @@ class User implements UserInterface
         return $this->profession;
     }
 
-    public function setProfession(?Profession $profession): self
-    {
-        $this->profession = $profession;
 
-        return $this;
-    }
 
 
 
