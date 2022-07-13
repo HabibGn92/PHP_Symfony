@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Hello UserController!
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+
+		<div id='listUsers'></div>
+	</div>
+
+	<script src="{{ asset('bundles/datatables/js/datatables.js') }}"></script>
+	<script>
+		$(function () {
+        $('#listUsers').initDataTables({{ datatable_settings(dataTable) }},{
+			"searching":true,
+			dom:'<"html5buttons"B>lTfgitp'
+		})});
+
+	</script>
+{% endblock %}
