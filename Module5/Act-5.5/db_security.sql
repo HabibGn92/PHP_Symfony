@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 11 juil. 2022 à 16:10
+-- Généré le : jeu. 14 juil. 2022 à 18:03
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 7.4.29
 
@@ -45,7 +45,8 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20220708132902', '2022-07-08 15:29:13', 129),
 ('DoctrineMigrations\\Version20220708133908', '2022-07-08 15:39:16', 115),
 ('DoctrineMigrations\\Version20220708134036', '2022-07-08 15:40:43', 456),
-('DoctrineMigrations\\Version20220708134251', '2022-07-08 15:42:59', 944);
+('DoctrineMigrations\\Version20220708134251', '2022-07-08 15:42:59', 944),
+('DoctrineMigrations\\Version20220713162255', '2022-07-13 18:23:17', 407);
 
 -- --------------------------------------------------------
 
@@ -77,24 +78,27 @@ CREATE TABLE `user` (
   `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `roles` longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '(DC2Type:json)',
-  `profession_id` int(11) NOT NULL
+  `roles` longtext COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '(DC2Type:json)'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `user_name`, `email`, `password`, `roles`, `profession_id`) VALUES
-(1, 'sami', 'test@yahoo.fr', '$argon2id$v=19$m=65536,t=4,p=1$ZFB3N1NCdHZoUFpNeDNUZA$3WVy0J2uCozRY6HyuDvmv1wJyBOe/3VTHdeRU8INFGg', '[\"ROLE_USER\"]', 1),
-(2, 'habib', 'habib.hajjem@talan.com', '$argon2id$v=19$m=65536,t=4,p=1$OUxqN205R0t1aDdodUVaQg$JXGZpRrhSmFtaEQErR4nJNLbsEEEoRgUEB7g98xDbR8', '[\"ROLE_USER\"]', 2),
-(3, 'sami', 'habib@yahoo.fr', '$argon2id$v=19$m=65536,t=4,p=1$L0VaV250ai9oTUlmOEtnRQ$wOZDtzOwTaA6H0VLCKhpaBL6m7j9gA5lGEmXZvWVRJg', '[\"ROLE_USER\"]', 1),
-(4, 'sami92', 'sami@yahoo.com', '$argon2id$v=19$m=65536,t=4,p=1$NWNISGtMWW1wYmlxbnVYRw$m7pRb8yI4jPdoBcsOdLQTWwRECBp2mebP4mGuiwcPVU', '[\"ROLE_USER\"]', 2),
-(5, 'admin', 'admin@hotmail.com', '$argon2id$v=19$m=65536,t=4,p=1$UEcxZ2tYRjFLVzY0SlphUg$9FL61YiLKTqGQsR3m9GARLadffTUgeZ72YUur95ogFI', '[\"ROLE_USER\",\"ROLE_ADMIN\"]', 2),
-(6, 'ali', 'ali@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$T2NaUlJTZFQwMUZkeWhJbQ$n6EsawNeXnSsjWOqSVcZN9om96np5G1AXTj/39maK64', '[\"ROLE_USER\"]', 1),
-(7, 'nader', 'nader@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$Yk5zOWhNd1dtTEl2Z3Mxbw$w+TfqA4EoF/L5rNcuoi+j/uQ4hXE5B+x2B/JE8LfdyA', '[\"ROLE_USER\"]', 1),
-(8, 'maaher', 'maher@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$Y0IvUkVOeEtrUFlPUURRWA$egFaEuBD/u1TvQ11PeQveZODFCdQPoxWBcH+tLpf1TA', '[\"ROLE_USER\"]', 2),
-(9, 'momo', 'momo@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$aFRrNkJzVHlwblBESi5vUw$uTmIGd946n/GN4EreLL74PcMTTJZu5y3j5oEIRFJ+eo', '[\"ROLE_USER\"]', 1);
+INSERT INTO `user` (`id`, `user_name`, `email`, `password`, `roles`) VALUES
+(1, 'sami', 'test@yahoo.fr', '$argon2id$v=19$m=65536,t=4,p=1$ZFB3N1NCdHZoUFpNeDNUZA$3WVy0J2uCozRY6HyuDvmv1wJyBOe/3VTHdeRU8INFGg', '[\"ROLE_USER\"]'),
+(2, 'habib', 'habib.hajjem@talan.com', '$argon2id$v=19$m=65536,t=4,p=1$OUxqN205R0t1aDdodUVaQg$JXGZpRrhSmFtaEQErR4nJNLbsEEEoRgUEB7g98xDbR8', '[\"ROLE_USER\"]'),
+(4, 'sami92', 'sami@yahoo.com', '$argon2id$v=19$m=65536,t=4,p=1$NWNISGtMWW1wYmlxbnVYRw$m7pRb8yI4jPdoBcsOdLQTWwRECBp2mebP4mGuiwcPVU', '[\"ROLE_USER\"]'),
+(5, 'admin', 'admin@hotmail.com', '$argon2id$v=19$m=65536,t=4,p=1$UEcxZ2tYRjFLVzY0SlphUg$9FL61YiLKTqGQsR3m9GARLadffTUgeZ72YUur95ogFI', '[\"ROLE_USER\",\"ROLE_ADMIN\"]'),
+(6, 'ali', 'ali@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$T2NaUlJTZFQwMUZkeWhJbQ$n6EsawNeXnSsjWOqSVcZN9om96np5G1AXTj/39maK64', '[\"ROLE_USER\"]'),
+(7, 'nader', 'nader@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$Yk5zOWhNd1dtTEl2Z3Mxbw$w+TfqA4EoF/L5rNcuoi+j/uQ4hXE5B+x2B/JE8LfdyA', '[\"ROLE_USER\"]'),
+(8, 'maaher', 'maher@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$Y0IvUkVOeEtrUFlPUURRWA$egFaEuBD/u1TvQ11PeQveZODFCdQPoxWBcH+tLpf1TA', '[\"ROLE_USER\"]'),
+(9, 'momo', 'momo@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$aFRrNkJzVHlwblBESi5vUw$uTmIGd946n/GN4EreLL74PcMTTJZu5y3j5oEIRFJ+eo', '[\"ROLE_USER\"]'),
+(10, 'mariem', 'mariem@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$VlhtWEtoWGhPR2V1TGhESg$osnpV+zNdncFCPTiRvPHatdirJPykPhoGJfXjDyQvok', '[\"ROLE_USER\"]'),
+(12, 'malek', 'malek@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$eHFPRmhDOHFrVFVxbEtnRA$mymQmf9bHvDaDzW2TR0b4X73jiA/WuYLpJEqtSbBPUM', '[\"ROLE_USER\"]'),
+(13, 'mohamed', 'med@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$cktzUU1ZTm42eEUzNzdmZQ$ScloXwXI0JafS8rOxB1ADWSsvEl32nIDqpZRIntZDvQ', '[\"ROLE_USER\"]'),
+(14, 'admin2', 'admin2@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$QW9ITVBvQkVhWlczbVFwUg$RUwhzEqc/em2yT2yCBJ+1ym+cJKk7AQDRxd7qeZUpro', '[\"ROLE_ADMIN\"]'),
+(15, 'alex', 'alex@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$WFpTNHh1WmVqd1h5ZVV4WQ$p2ADhJk85u9Cc+dBBoJEVM4Hp2UviCoob+71/IYgkA0', '[\"ROLE_USER\"]');
 
 --
 -- Index pour les tables déchargées
@@ -116,8 +120,7 @@ ALTER TABLE `profession`
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `IDX_8D93D649FDEF8996` (`profession_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -133,17 +136,7 @@ ALTER TABLE `profession`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `FK_8D93D649FDEF8996` FOREIGN KEY (`profession_id`) REFERENCES `profession` (`id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

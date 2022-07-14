@@ -10,8 +10,12 @@
  * Lancer le serveur:
 	 - php bin/console server:run
 
- * coordonnées d'un compte admin:
+ * coordonnées d'un compte ayant les roles user et admin:
 	adresse email: admin@hotmail.com
+	mot de passe : 123
+
+ * coordonnées d'un compte ayant le role admin:
+	adresse email: admin2@gmail.com
 	mot de passe : 123
 
  * page accessible par un compte avec un role user : http://127.0.0.1:8000/user

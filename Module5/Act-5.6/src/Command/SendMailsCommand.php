@@ -31,8 +31,8 @@ class SendMailsCommand extends Command
     {
         $this
             ->setDescription(self::$defaultDescription)
-            ->addArgument('arg1', InputArgument::OPTIONAL, 'Argument description')
-            ->addOption('option1', null, InputOption::VALUE_NONE, 'Option description')
+            ->addArgument('adresseEmail', InputArgument::OPTIONAL, 'addresseEmail')
+            ->addOption('type', null, InputOption::VALUE_REQUIRED, 'type')
         ;
     }
 
@@ -45,13 +45,38 @@ class SendMailsCommand extends Command
                 $address[] = $user->getEmail();
             }
         }
-        $email = (new Email())
-                    ->from('habib.hajjem@talan.com')
-                    ->to(...$address)
-                    ->subject('Time for Symfony Mailer!')
-                    ->text('Sending emails is fun again!')
-                    ;
-                    $this->mailer->send($email);
+            $email = (new Email())
+            ->from('habib.hajjem@talan.com');
+
+            
+            if($input->getArgument('adresseEmail')){
+                $email->to($input->getArgument('adresseEmail'));
+
+                if ($input->getOption('type')) {
+
+                    if ($input->getOption('type') == 'inscription') {
+                        $email->subject('inscription')
+                        ->text('Thanks for your registration');
+                    } elseif($input->getOption('type') == 'confirmation') {
+                        $email->subject('confirmation')
+                        ->text('Your account is activated.');
+                    }else{
+                        return 1;
+                    }
+                } else{
+                   $email->subject('confirmation')
+                   ->text('Helloo !');
+                }
+            }
+            else{
+                $email->to(...$address)
+                ->subject('Time for Symfony Mailer!')
+                ->text('Helloo !');
+                
+            }
+  
+        $this->mailer->send($email);
+
 
         $io->success('Emails sends successfully !');
 
