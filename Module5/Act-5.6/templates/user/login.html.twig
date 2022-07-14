@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!
+{% endblock %}
+
+{% block body %}
+		<style>
+		.error{
+			color:red;
+		}
+		</style>
+
+	<div class="container">
+	{% if error %}
+    	<div class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
+		<form method="post" action="{{path('login')}}">
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Email address</label>
+				<input type="email" class="form-control" name="_username">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Password</label>
+				<input type="password" class="form-control" name="_password" >
+			</div>
+            <button class="btn btn-primary"> se connecter </button>
+		</form>
+	</div>
+{% endblock %}
