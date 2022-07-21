@@ -9,7 +9,8 @@
 
  - php bin/console server:run
 
- * Sur Postman :
+ 
+* Sur Postman :
  
  - Pour récupérer tous les articles utiliser l'url suivante via GET : http://127.0.0.1:8000/articles
 
@@ -22,3 +23,7 @@
  - Pour récupérer les 3 derniers articles utiliser l'url suivante via GET: http://127.0.0.1:8000/last_articles
 
  - Pour supprimer un article utiliser l'url suivante via DELETE : http://127.0.0.1:8000/article/{id}
+
+
+
+

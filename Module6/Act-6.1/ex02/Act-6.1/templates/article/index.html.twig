@@ -8,17 +8,23 @@
     <div class="card" style="width: 100%;padding: 10px;">
         <div class="card-body">
             <p class="card-title"> <span class="title">Titre de l'article : </span> {{article.title}}</p>
-            <p class="card-text">{{article.body}}</p>
+            <p class="card-text">{{article.content}}</p>
+            <p class="card-text"><span class="title">Auteur de l'article : </span>{{article.author}}</p>
+            <p class="card-text"><span class="title">Date de publication : </span>{{article.createdAt | date("m/d/Y")}}</p>
         </div>
-        <h4>Commentaires</h4>
-        {% for comment in comments %}
+        <div>
+            <a class="btn btn-danger" href="{{path('app_deleteArticle',{id : article.id})}}">Supprimer</a>
+            <a class="btn btn-primary">Modifer</a>
+        </div>
+        {# <h4>Commentaires</h4> #}
+        {# {% for comment in comments %}
             {% if comment.postId == article.id %}
             <div class="comment_item">
             <p class="card-title"><span class="title" > Publié par : </span> {{comment.name}}</p>
             <p> {{comment.body}}</p>
             </div>
             {% endif %}
-        {% endfor %}
+        {% endfor %} #}
     </div>
     {% endfor %}
     </div>
