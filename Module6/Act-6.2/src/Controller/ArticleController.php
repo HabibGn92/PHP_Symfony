@@ -16,9 +16,9 @@ use Symfony\Component\Serializer\SerializerInterface;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/article", name="app_article", methods={"GET"})
+     * @Route("/articles", name="app_article", methods={"GET"})
      */
-    public function index(ArticleRepository $articleRepo): Response
+    public function getArticles(ArticleRepository $articleRepo): Response
     {
         $articles = $articleRepo->findAll();
         $response = $this->json($articles,200);
@@ -49,27 +49,28 @@ class ArticleController extends AbstractController
         return $this->json($article,200);
     }
 
-    
-    /**
-     * @GET("/articles", name="app_getArticles")
-     */
-    public function getArticles(ArticleRepository $articleRepo):Response
-    {
-        $articles = $articleRepo->findAll();
-        $response = $this->json($articles,200);
-        return $response;
-    }
 
-    /**
-     * @GET("/articles/{id}", name="app_showArticle")
-     */
-    public function showArticle(ArticleRepository $articleRepo,$id):Response
-    {
-        $article = $articleRepo->find($id);
-        if(!$article){
-            return $this->json(["error message" => "article not found"],404);
-        }
-        $response = $this->json($article,200);
-        return $response;
-    }
+
+    // /**
+    //  * @GET("/articles", name="app_getArticles")
+    //  */
+    // public function getArticles(ArticleRepository $articleRepo):Response
+    // {
+    //     $articles = $articleRepo->findAll();
+    //     $response = $this->json($articles,200);
+    //     return $response;
+    // }
+
+    // /**
+    //  * @GET("/article/{id}", name="app_showArticle")
+    //  */
+    // public function showArticle(ArticleRepository $articleRepo,$id):Response
+    // {
+    //     $article = $articleRepo->find($id);
+    //     if(!$article){
+    //         return $this->json(["error message" => "article not found"],404);
+    //     }
+    //     $response = $this->json($article,200);
+    //     return $response;
+    // }
 }
