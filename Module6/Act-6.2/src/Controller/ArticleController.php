@@ -47,7 +47,7 @@ class ArticleController extends AbstractController
             $article = $serializer->deserialize($request->getContent(),Article::class,'json');
             $em->persist($article);
             $em->flush();
-            return $this->json($article,200);
+            return $this->json($article,201);
         } catch (NotEncodableValueException $e) {
             return $this->json(["error message"=>$e->getMessage()],400);
         }

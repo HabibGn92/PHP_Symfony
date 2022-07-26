@@ -9,28 +9,39 @@
 
  * php bin/console server:run
 
+ * dans le fichier .env : modifier le mot de pass(JWT_PASSPHRASE)
+
  * générer les clés SSH :
 	
 	mkdir -p config/jwt
 
-	openssl genpkey -out config/jwt/private.pem -aes256 -algorithm rsa -pkeyopt rsa_keygen_bits:4096
+	openssl genrsa -out config/jwt/private.pem -aes256 4096
 
-	openssl pkey -in config/jwt/private.pem -out config/jwt/public.pem
+	openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 
- * sur Postman :
+ * sur Postman : 
+
+	- ajouter dans header : Content-Type : application/json
 
 	- pour générer le token : envoyer une requete POST à /api/login_check avec le données suivant :
 
-	body : { "username":"admin@talan.com","password":"admin123"}
-
-	header : Content-Type : application/json
-
-	- pour récupérer tous les articles (route sécurisée) : envoyer une requete GET à /api/users avec les données suivantes:
-
-	header : Authorization : token généré précédemment 
+		body : { "username":"admin@talan.com","password":"admin123"}
 	
-		 Content-Type : application/json
+	- pour récupérer tous les articles (route non sécurisée) : envoyer une requete GET /articles
 
-	- pour récupérer tous les articles (route non sécurisée) : envoyer une requete GET /users avec les données suivantes:
+	* Pour les routes sécurisés ajouter dans header la ligne suivante :  Authorization : Bearer token
 
-	header : Content-Type : application/json
+
+	- pour récupérer tous les articles : envoyer une requete GET à /api/articles
+
+	- pour récupérer un article : envoyer une requete GET à /api/article/{id}
+
+	- pour ajouter un article : envoyer une requete POST à /api/article avec un body qui contient l'article à ajouter
+
+	- pour ajouter ou modifier un article : envoyer une requete PUT avec un body qui contient les modifs ou l'article à ajouter à /api/article/{id} 
+
+	- pour récupérer les 3 derniers articles : envoyer une requete GET à /api/last_articles
+
+	- pour supprimer un article : envoyer une requete DELETE à /api/article/{id}
+
+

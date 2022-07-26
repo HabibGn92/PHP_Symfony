@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use JMS\Serializer\Annotation as Serializer;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -14,26 +15,31 @@ class Article
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Serializer\Groups({"users"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Serializer\Groups({"users"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Serializer\Groups({"users"})
      */
     private $author;
 
     /**
      * @ORM\Column(type="text")
+     * @Serializer\Groups({"users"})
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Serializer\Groups({"users"})
      */
     private $created_at;
 
