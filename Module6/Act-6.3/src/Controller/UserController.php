@@ -17,7 +17,7 @@ class UserController extends AbstractController
 {
 
     /**
-     * @Rest\View(serializerGroups={"users"})
+     * @Rest\View(serializerGroups={"articles"})
      * @Rest\Get("/articles", name="app_all",methods="GET")
      */
     public function getAll(ArticleRepository $articleRepo)
@@ -27,17 +27,17 @@ class UserController extends AbstractController
 
     
     /**
-     * @Rest\View(serializerGroups={"users"})
-     * @Rest\Get("/api/articles", name="app_users")
+     * @Rest\View(serializerGroups={"articles"})
+     * @Rest\Get("/api/articles", name="app_articles")
      */
-    public function getUsers(ArticleRepository $articleRepo)
+    public function getArticles(ArticleRepository $articleRepo)
     {
         return $articleRepo->findAll();
      
     }
 
     /**
-     * @Rest\View(serializerGroups={"users"})
+     * @Rest\View(serializerGroups={"articles"})
      * @Rest\Get("/api/article/{id}", name="app_article_show")
      */
     public function show(ArticleRepository $articleRepo,$id)
@@ -50,7 +50,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Rest\View(statusCode = 201, serializerGroups={"users"})
+     * @Rest\View(statusCode = 201, serializerGroups={"articles"})
      * @Rest\Post("/api/article", name="app_add_article")
      */
     public function addArticle(EntityManagerInterface $em,Request $request,SerializerInterface $serializer)
@@ -90,7 +90,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Rest\View(serializerGroups={"users"})
+     * @Rest\View(serializerGroups={"articles"})
      * @Rest\Get("/api/last_articles",name="app_lastArticles")
      */
     public function getLastArticles(ArticleRepository $articleRepo)

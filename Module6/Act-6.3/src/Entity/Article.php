@@ -15,31 +15,31 @@ class Article
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Serializer\Groups({"users"})
+     * @Serializer\Groups({"articles"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Serializer\Groups({"users"})
+     * @Serializer\Groups({"articles"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Serializer\Groups({"users"})
+     * @Serializer\Groups({"articles"})
      */
     private $author;
 
     /**
      * @ORM\Column(type="text")
-     * @Serializer\Groups({"users"})
+     * @Serializer\Groups({"articles"})
      */
     private $content;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Serializer\Groups({"users"})
+     * @Serializer\Groups({"articles"})
      */
     private $created_at;
 
