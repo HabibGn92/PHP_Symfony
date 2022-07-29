@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
 import { Article } from 'src/models/article.model';
 
 @Injectable({
@@ -48,7 +47,7 @@ export class ArticlesService {
   constructor() { }
 
   getArticles() : Article[] {
-    return this.articles;
+    return this.sortArticles();
   }
 
   getArticleById(id:number) : Article {
@@ -58,5 +57,11 @@ export class ArticlesService {
     }else{
       return article;
     }
+  }
+
+  sortArticles(): Article[] {
+    return this.articles.sort(function(a,b): any{
+      return (b.date.getTime() - a.date.getTime());
+      });
   }
 }

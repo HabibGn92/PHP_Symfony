@@ -2,5 +2,15 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 50px;
+
+}
+#img_container{
+    width:60%;
+    margin: auto;
+
+    img{
+        width: 50%;
+        height: auto;
+    }
 }
