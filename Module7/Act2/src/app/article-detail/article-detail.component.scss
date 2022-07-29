@@ -1,0 +1,29 @@
+#article_detail{
+    width: 60%;
+    margin: 40px auto 0;
+}
+
+span{
+    font-weight: 300;
+}
+
+.comment_item{
+    background-color: rgb(238, 235, 235);
+    padding: 20px 0 20px 40px;
+    border-radius: 20px 20px;
+    div{
+        display: flex;
+        gap: 20px;
+    }
+}
+
+#comments{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#comments_title{
+    margin-top: 20px;
+}

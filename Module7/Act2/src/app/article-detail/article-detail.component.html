@@ -1,3 +1,14 @@
-<div>
-    <h3>{{article.auteur}}</h3>
+<div id="article_detail">
+    <h3> Auteur :<span> {{article.auteur}} </span> </h3>
+    <h3> Date de publication : <span> {{ article.date | date: 'dd/MM/yyyy' }} </span> </h3>
+    <h3 *ngIf = "article.commentaires" id="comments_title">Commentaires : </h3>
+    <div id="comments">
+        <div *ngFor="let commentaire of article.commentaires" class="comment_item">
+            <h5>{{commentaire.content}}</h5>
+            <div>
+                <p>Publié par : <strong>{{commentaire.auteur}}</strong></p> 
+                <p>Date : <strong> {{commentaire.date | date: 'dd/MM/yyyy' }} </strong></p>
+            </div>
+        </div>
+    </div>
 </div>

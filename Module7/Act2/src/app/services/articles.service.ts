@@ -13,7 +13,21 @@ export class ArticlesService {
       title : 'Angular 12 ',
       description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et elit ut odio volutpat accumsan. Mauris bibendum quis erat aliquam laoreet. Cras porta risus vel sagittis aliquet. Praesent in ligula at mi efficitur hendrerit. Praesent porta erat eu justo mollis, ornare ullamcorper metus gravida. Phasellus iaculis quam vitae justo eleifend sodales. Vestibulum ut ante diam. Morbi sollicitudin sit amet arcu ut pharetra. Maecenas bibendum massa in lobortis scelerisque. Nulla sit amet mollis elit. Phasellus ut massa ut nisl pellentesque imperdiet.',
       auteur : 'Habib',
-      date : new Date('2020-05-01')
+      date : new Date('2020-05-01'),
+      commentaires: [
+        {
+          id: 1,
+          content : 'excellent article',
+          auteur : 'sami',
+          date: new Date('2021-06-02')
+        },
+        {
+          id: 2,
+          content : 'article intéressant',
+          auteur : 'mohamed',
+          date: new Date('2021-09-08')
+        },
+      ]
     },
     {
       id:2,

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Article } from 'src/models/article.model';
 
 @Component({
@@ -10,13 +11,13 @@ export class ArticleComponent implements OnInit {
 
   @Input() article!:Article;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
-  onViewArticle():void{
-
+  onViewArticle(): void {
+    this.router.navigateByUrl(`articles/${this.article.id}`);
   }
 
 }
