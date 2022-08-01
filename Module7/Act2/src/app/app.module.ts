@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { ArticleComponent } from './article/article.component';
 import { ListArticlesComponent } from './list-articles/list-articles.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddArticleComponent } from './add-article/add-article.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { ArticleDetailComponent } from './article-detail/article-detail.componen
     HeaderComponent,
     ArticleComponent,
     ListArticlesComponent,
-    ArticleDetailComponent
+    ArticleDetailComponent,
+    AddArticleComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

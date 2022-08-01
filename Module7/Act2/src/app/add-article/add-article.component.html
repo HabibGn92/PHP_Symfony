@@ -1,0 +1,30 @@
+<div id="form_container">
+    <form [formGroup]="articleForm">
+        <div class="form-group">
+            <label for="title" class="form-label">Titre</label>
+                <input type="text" class="form-control" formControlName="title">
+                <span *ngIf="articleForm.controls['title'].invalid && (articleForm.controls['title'].dirty || articleForm.controls['title'].touched)" class="alert">
+                     Ce champ est obligatoire  
+                </span>
+        </div>
+        <div class="form-group">
+            <label for="autheur" class="form-label">Auteur</label>
+                <input type="text" class="form-control" formControlName="auteur">
+        </div>
+        <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" formControlName="description"></textarea>
+            <span *ngIf="articleForm.controls['description'].invalid && (articleForm.controls['description'].dirty || articleForm.controls['description'].touched)" class="alert">
+                Ce champ est obligatoire  
+           </span>
+        </div>
+        <div class="form-group">
+            <label for="date" class="form-label">Date de publication</label>
+            <input type="date" class="form-control" formControlName="date">
+            <span *ngIf="articleForm.controls['date'].errors?.['invalidDate'] && (articleForm.controls['date'].dirty || articleForm.controls['date'].touched)">
+                Entrer une date supérieur à la date d'aujourd'hui 
+           </span>
+        </div>
+        <button type="submit" class="btn btn-secondary" (click)="onSubmitForm()" [disabled]="articleForm.invalid" > Ajouter </button>
+    </form>
+</div>

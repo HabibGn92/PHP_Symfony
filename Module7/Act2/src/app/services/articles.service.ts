@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Article } from 'src/models/article.model';
+import { Commentaire } from 'src/models/commentaire.model';
 
 @Injectable({
   providedIn: 'root'
@@ -63,5 +64,14 @@ export class ArticlesService {
     return this.articles.sort(function(a,b): any{
       return (b.date.getTime() - a.date.getTime());
       });
+  }
+
+  addArticle(formValue : {title : string, description: string, auteur: string, date: Date, commentaires?: Commentaire[]}):void {
+
+    const article = {
+      ...formValue,
+      id : this.articles[this.articles.length - 1].id + 1
+    }
+    this.articles.push(article);
   }
 }
