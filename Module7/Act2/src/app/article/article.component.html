@@ -1,8 +1,8 @@
 <div class="card" style="width: 100%;margin-bottom: 30px;">
     <div class="card-body">
       <h5 class="card-title">{{ article.title }}</h5>
-      <p class="card-text">{{ article.description }}</p>
-      <p class="card-text"> <strong>Date de publication :</strong> {{ article.date | date: 'dd/MM/yyyy' }}</p>
+      <p class="card-text">{{ article.content }}</p>
+      <p class="card-text"> <strong>Date de publication :</strong> {{ article.created_at | date: 'dd/MM/yyyy' }}</p>
       <button class="btn btn-secondary" (click)="onViewArticle()">Afficher détails</button>
     </div>
   </div>

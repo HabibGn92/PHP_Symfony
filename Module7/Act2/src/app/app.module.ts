@@ -10,6 +10,7 @@ import { ListArticlesComponent } from './list-articles/list-articles.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddArticleComponent } from './add-article/add-article.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AddArticleComponent } from './add-article/add-article.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

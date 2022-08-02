@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Article } from 'src/models/article.model';
 import { Commentaire } from 'src/models/commentaire.model';
 
@@ -7,13 +9,14 @@ import { Commentaire } from 'src/models/commentaire.model';
 })
 export class ArticlesService {
 
+  articles$!:Observable<Article[]>;
   articles: Article[] = [
     {
       id : 1,
       title : 'Angular 12 ',
-      description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et elit ut odio volutpat accumsan. Mauris bibendum quis erat aliquam laoreet. Cras porta risus vel sagittis aliquet. Praesent in ligula at mi efficitur hendrerit. Praesent porta erat eu justo mollis, ornare ullamcorper metus gravida. Phasellus iaculis quam vitae justo eleifend sodales. Vestibulum ut ante diam. Morbi sollicitudin sit amet arcu ut pharetra. Maecenas bibendum massa in lobortis scelerisque. Nulla sit amet mollis elit. Phasellus ut massa ut nisl pellentesque imperdiet.',
-      auteur : 'Habib',
-      date : new Date('2020-05-01'),
+      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et elit ut odio volutpat accumsan. Mauris bibendum quis erat aliquam laoreet. Cras porta risus vel sagittis aliquet. Praesent in ligula at mi efficitur hendrerit. Praesent porta erat eu justo mollis, ornare ullamcorper metus gravida. Phasellus iaculis quam vitae justo eleifend sodales. Vestibulum ut ante diam. Morbi sollicitudin sit amet arcu ut pharetra. Maecenas bibendum massa in lobortis scelerisque. Nulla sit amet mollis elit. Phasellus ut massa ut nisl pellentesque imperdiet.',
+      author : 'Habib',
+      created_at : new Date('2020-05-01'),
       commentaires: [
         {
           id: 1,
@@ -32,23 +35,23 @@ export class ArticlesService {
     {
       id:2,
       title : 'TypeScript ',
-      description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et elit ut odio volutpat accumsan. Mauris bibendum quis erat aliquam laoreet. Cras porta risus vel sagittis aliquet. Praesent in ligula at mi efficitur hendrerit. Praesent porta erat eu justo mollis, ornare ullamcorper metus gravida. Phasellus iaculis quam vitae justo eleifend sodales. Vestibulum ut ante diam. Morbi sollicitudin sit amet arcu ut pharetra. Maecenas bibendum massa in lobortis scelerisque. Nulla sit amet mollis elit. Phasellus ut massa ut nisl pellentesque imperdiet.',
-      auteur : 'Mohamed',
-      date : new Date('2018-05-01')
+      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et elit ut odio volutpat accumsan. Mauris bibendum quis erat aliquam laoreet. Cras porta risus vel sagittis aliquet. Praesent in ligula at mi efficitur hendrerit. Praesent porta erat eu justo mollis, ornare ullamcorper metus gravida. Phasellus iaculis quam vitae justo eleifend sodales. Vestibulum ut ante diam. Morbi sollicitudin sit amet arcu ut pharetra. Maecenas bibendum massa in lobortis scelerisque. Nulla sit amet mollis elit. Phasellus ut massa ut nisl pellentesque imperdiet.',
+      author : 'Mohamed',
+      created_at : new Date('2018-05-01')
     },
     {
       id:3,
       title : 'JavaScript ',
-      description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et elit ut odio volutpat accumsan. Mauris bibendum quis erat aliquam laoreet. Cras porta risus vel sagittis aliquet. Praesent in ligula at mi efficitur hendrerit. Praesent porta erat eu justo mollis, ornare ullamcorper metus gravida. Phasellus iaculis quam vitae justo eleifend sodales. Vestibulum ut ante diam. Morbi sollicitudin sit amet arcu ut pharetra. Maecenas bibendum massa in lobortis scelerisque. Nulla sit amet mollis elit. Phasellus ut massa ut nisl pellentesque imperdiet.',
-      auteur : 'Ali',
-      date : new Date('2019-05-01')
+      content : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et elit ut odio volutpat accumsan. Mauris bibendum quis erat aliquam laoreet. Cras porta risus vel sagittis aliquet. Praesent in ligula at mi efficitur hendrerit. Praesent porta erat eu justo mollis, ornare ullamcorper metus gravida. Phasellus iaculis quam vitae justo eleifend sodales. Vestibulum ut ante diam. Morbi sollicitudin sit amet arcu ut pharetra. Maecenas bibendum massa in lobortis scelerisque. Nulla sit amet mollis elit. Phasellus ut massa ut nisl pellentesque imperdiet.',
+      author : 'Ali',
+      created_at : new Date('2019-05-01')
     },
   ];
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getArticles() : Article[] {
-    return this.sortArticles();
+  getArticles() : Observable<Article[]> {
+    return this.http.get<Article[]>('http://127.0.0.1:8000/articles');
   }
 
   getArticleById(id:number) : Article {
@@ -62,11 +65,11 @@ export class ArticlesService {
 
   sortArticles(): Article[] {
     return this.articles.sort(function(a,b): any{
-      return (b.date.getTime() - a.date.getTime());
+      return (b.created_at.getTime() - a.created_at.getTime());
       });
   }
 
-  addArticle(formValue : {title : string, description: string, auteur: string, date: Date, commentaires?: Commentaire[]}):void {
+  addArticle(formValue : {title : string, content: string, author: string, created_at: Date, commentaires?: Commentaire[]}):void {
 
     const article = {
       ...formValue,

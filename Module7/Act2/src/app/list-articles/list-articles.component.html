@@ -1,4 +1,4 @@
 <div id="list_articles">
     <app-add-article></app-add-article>
-    <app-article *ngFor="let article of articles" [article]="article"></app-article>
+    <app-article *ngFor="let article of articles$ | async" [article]="article"></app-article>
 </div>

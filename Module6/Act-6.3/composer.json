@@ -13,6 +13,7 @@
         "fzaninotto/faker": "^1.9",
         "jms/serializer-bundle": "^4.0",
         "lexik/jwt-authentication-bundle": "^2.16",
+        "nelmio/cors-bundle": "^2.2",
         "phpdocumentor/reflection-docblock": "^5.3",
         "sensio/framework-extra-bundle": "^5.1",
         "symfony/asset": "4.4.*",
