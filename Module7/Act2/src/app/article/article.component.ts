@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Article } from 'src/models/article.model';
@@ -12,7 +13,8 @@ export class ArticleComponent implements OnInit {
   @Input() article!:Article;
           
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,
+              private http:HttpClient) { }
 
   ngOnInit(): void {
     

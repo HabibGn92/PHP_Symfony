@@ -21,9 +21,9 @@ export class AddArticleComponent implements OnInit {
   ngOnInit(): void {
     this.articleForm = this.formBuilder.group({
       title: [null, Validators.required],
-      description: [null, Validators.required],
-      auteur: [null],
-      date: [new Date(), this.dateValidator()]
+      content: [null, Validators.required],
+      author: [null],
+      created_at: [new Date(), this.dateValidator()]
     });
 
     this.articlePreview$ = this.articleForm.valueChanges.pipe(

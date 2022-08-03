@@ -54,13 +54,8 @@ export class ArticlesService {
     return this.http.get<Article[]>('http://127.0.0.1:8000/api/articles');
   }
 
-  getArticleById(id:number) : Article {
-    const article = this.articles.find( article => article.id === id );
-    if (!article) {
-      throw new Error('Article non trouvé');
-    }else{
-      return article;
-    }
+  getArticleById(id:number) : Observable<Article> {
+    return this.http.get<Article>(`http://127.0.0.1:8000/api/article/${id}`);
   }
 
   sortArticles(): Article[] {
@@ -75,6 +70,6 @@ export class ArticlesService {
       ...formValue,
       id : this.articles[this.articles.length - 1].id + 1
     }
-    this.articles.push(article);
+    this.http.post<Article>('http://127.0.0.1:8000/api/article',article).subscribe();
   }
 }

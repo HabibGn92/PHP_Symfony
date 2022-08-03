@@ -8,20 +8,20 @@
                 </span>
         </div> 
         <div class="form-group">
-            <label for="autheur" class="form-label">Auteur</label>
-                <input type="text" class="form-control" formControlName="auteur">
+            <label for="author" class="form-label">Auteur</label>
+                <input type="text" class="form-control" formControlName="author">
         </div>
         <div class="form-group">
-            <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" formControlName="description"></textarea>
-            <span *ngIf="articleForm.controls['description'].invalid && (articleForm.controls['description'].dirty || articleForm.controls['description'].touched)" class="alert">
+            <label for="content" class="form-label">Description</label>
+            <textarea class="form-control" formControlName="content"></textarea>
+            <span *ngIf="articleForm.controls['content'].invalid && (articleForm.controls['content'].dirty || articleForm.controls['content'].touched)" class="alert">
                 Ce champ est obligatoire  
            </span>
         </div>
         <div class="form-group">
-            <label for="date" class="form-label">Date de publication</label>
-            <input type="date" class="form-control" formControlName="date">
-            <span *ngIf="articleForm.controls['date'].errors?.['invalidDate'] && (articleForm.controls['date'].dirty || articleForm.controls['date'].touched)">
+            <label for="created_at" class="form-label">Date de publication</label>
+            <input type="date" class="form-control" formControlName="created_at">
+            <span *ngIf="articleForm.controls['created_at'].errors?.['invalidDate'] && (articleForm.controls['created_at'].dirty || articleForm.controls['created_at'].touched)">
                 Entrer une date supérieur à la date d'aujourd'hui 
            </span>
         </div>
