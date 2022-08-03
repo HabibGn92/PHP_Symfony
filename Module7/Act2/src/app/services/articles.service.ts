@@ -51,7 +51,7 @@ export class ArticlesService {
   constructor(private http:HttpClient) { }
 
   getArticles() : Observable<Article[]> {
-    return this.http.get<Article[]>('http://127.0.0.1:8000/articles');
+    return this.http.get<Article[]>('http://127.0.0.1:8000/api/articles');
   }
 
   getArticleById(id:number) : Article {

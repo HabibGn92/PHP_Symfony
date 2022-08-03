@@ -12,7 +12,7 @@ import { ArticlesService } from '../services/articles.service';
 })
 export class AddArticleComponent implements OnInit {
 
-  articleForm!:FormGroup;
+  articleForm!:FormGroup; 
   articlePreview$!:Observable<Article>
 
   constructor(private formBuilder: FormBuilder,

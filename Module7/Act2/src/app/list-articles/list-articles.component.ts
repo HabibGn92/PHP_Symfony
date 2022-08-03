@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { Article } from 'src/models/article.model';
 import { ArticlesService } from '../services/articles.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-list-articles',
@@ -13,11 +13,11 @@ export class ListArticlesComponent implements OnInit {
 
   articles$!:Observable<Article[]>;
 
-  constructor(private articleService:ArticlesService) { }
+  constructor(private articleService:ArticlesService,
+              private authService:AuthService) { }
 
   ngOnInit(): void {
     this.articles$ = this.articleService.getArticles();
-
   }
 
 }

@@ -10,7 +10,10 @@ import { ListArticlesComponent } from './list-articles/list-articles.component';
 import { ArticleDetailComponent } from './article-detail/article-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddArticleComponent } from './add-article/add-article.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { LoginComponent } from './login/login.component';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     ArticleComponent,
     ListArticlesComponent,
     ArticleDetailComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,11 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi:true },
+    { provide: JWT_OPTIONS , useValue: JWT_OPTIONS},
+    JwtHelperService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
