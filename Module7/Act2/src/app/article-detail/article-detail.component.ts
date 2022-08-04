@@ -18,7 +18,6 @@ export class ArticleDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.article$ = this.articlesServices.getArticleById(+this.route.snapshot.params['id']);
-    // const articleId = +this.route.snapshot.params['id'];
   }
 
 }

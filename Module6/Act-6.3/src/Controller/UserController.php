@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,6 +16,15 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 
 class UserController extends AbstractController
 {
+
+    /**
+     * @Rest\View()
+     * @Rest\Get("/api/user/{email}", name="get_user")
+     */
+    public function getLoggedUser(UserRepository $userRepo,$email)
+    {
+       return $userRepo->findUserByEmail($email);
+    }
 
     /**
      * @Rest\View(serializerGroups={"articles"})
@@ -33,7 +43,6 @@ class UserController extends AbstractController
     public function getArticles(ArticleRepository $articleRepo)
     {
         return $articleRepo->findAll();
-     
     }
 
     /**

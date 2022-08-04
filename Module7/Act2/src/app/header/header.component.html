@@ -9,8 +9,11 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" *ngIf="isUser()">
             <a class="nav-link" routerLink="articles" routerLinkActive="active">Mes Articles</a>
+          </li>
+          <li class="nav-item" *ngIf="isAdmin()">
+            <a class="nav-link" routerLink="admin" routerLinkActive="active">Admin</a>
           </li>
         </ul>
         <ul class="navbar-nav">

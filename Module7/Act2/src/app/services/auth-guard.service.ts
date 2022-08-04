@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, CanDeactivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRouteSnapshot, CanActivate, Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import jwtDecode from 'jwt-decode';
 import { AuthService } from './auth.service';
 
 @Injectable({
@@ -9,10 +10,16 @@ import { AuthService } from './auth.service';
 export class AuthGuardService implements CanActivate {
 
   constructor(public auth:AuthService,
-              public router:Router) { }
+              public router:Router,
+              public jwtHelper : JwtHelperService) { }
 
-  canActivate(): boolean {
-    if (!this.auth.isAuthenticated()) {
+  canActivate(route: ActivatedRouteSnapshot): boolean {
+
+    const expectedRole = route.data.expectedRole;
+    const token = JSON.parse(localStorage.getItem('jwt') || '{}').token;
+    const tokenPayload = this.jwtHelper.decodeToken(token);
+  
+    if (!this.auth.isAuthenticated() || !tokenPayload.roles.includes(expectedRole)) {
       this.router.navigateByUrl('login');
       return false;
     }

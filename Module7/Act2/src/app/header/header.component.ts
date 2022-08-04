@@ -9,13 +9,14 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  isAuth!:boolean;
+  firstName!:string;
 
   constructor(private authService:AuthService,
               private router:Router) { }
 
   ngOnInit(): void {
-    this.isAuth = this.authService.isAuthenticated();
+    this.authService.getUser();
+   
   }
 
   onLogout() : void {
@@ -24,7 +25,16 @@ export class HeaderComponent implements OnInit {
   }
 
   isLoggedIn() {
-    return localStorage.getItem('jwt');
+      return this.authService.isAuthenticated();
   }
+
+  isUser() : boolean {
+    return this.authService.isUser();
+  }
+
+  isAdmin() : boolean {
+    return this.authService.isAdmin();
+  }
+
 
 }

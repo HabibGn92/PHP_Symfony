@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
       response => {
         if(response.token){
           localStorage.setItem('jwt', JSON.stringify(response));
-          this.router.navigateByUrl('articles');
+          this.router.navigateByUrl('');
         } 
       },() => {
         this.error = true;
