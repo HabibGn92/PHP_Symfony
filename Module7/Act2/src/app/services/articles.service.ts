@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Article } from 'src/models/article.model';
 import { Commentaire } from 'src/models/commentaire.model';
 
@@ -51,16 +52,18 @@ export class ArticlesService {
   constructor(private http:HttpClient) { }
 
   getArticles() : Observable<Article[]> {
-    return this.http.get<Article[]>('http://127.0.0.1:8000/api/articles');
+    return this.http.get<Article[]>('http://127.0.0.1:8000/api/articles').pipe(
+      map((articles) => this.sortArticles(articles) )
+    );
   }
 
   getArticleById(id:number) : Observable<Article> {
     return this.http.get<Article>(`http://127.0.0.1:8000/api/article/${id}`);
   }
 
-  sortArticles(): Article[] {
-    return this.articles.sort(function(a,b): any{
-      return (b.created_at.getTime() - a.created_at.getTime());
+  sortArticles(articles: Article[]): Article[] {
+    return articles.sort(function(a,b): any{
+      return (new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
       });
   }
 
