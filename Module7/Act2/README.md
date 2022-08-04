@@ -9,5 +9,10 @@ Pour lancer l'application, executer les commandes suivantes:
 
 Pour se connecter :
 
+compte admin:
     username : admin@talan.com  
     password : admin123
+
+compte user:
+    username: habib@talan.com  
+    password: habib123
