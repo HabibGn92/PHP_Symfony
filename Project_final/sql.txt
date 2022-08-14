@@ -1,8 +1,0 @@
-
-	******* users ********
-
-	INSERT INTO `user`(`id`, `email`, `name`, `roles`, `password`)
-	VALUES ('[value-1]','habib.hajjem@talan.com','habib','["ROLE_USER"]','$2y$10$PeSU7g8nehDz5QBi9o57UOHkYf/Mv6LlGUGGzOWx.kSzCQ92WzT2O');
-
-	INSERT INTO `user`(`id`, `email`, `name`, `roles`, `password`)
-	VALUES ('[value-1]','habib.admin@talan.com','admin','["ROLE_ADMIN"]','$2y$10$PeSU7g8nehDz5QBi9o57UOHkYf/Mv6LlGUGGzOWx.kSzCQ92WzT2O');
